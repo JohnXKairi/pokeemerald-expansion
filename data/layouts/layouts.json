@@ -4410,6 +4410,66 @@
       "secondary_tileset": "gTileset_MysteryEventsHouse",
       "border_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/border.bin",
       "blockdata_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/map.bin"
+    },
+    {
+      "id": "LAYOUT_GRASSY_FIELD",
+      "name": "GrassyField_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/GrassyField/border.bin",
+      "blockdata_filepath": "data/layouts/GrassyField/map.bin"
+    },
+    {
+      "id": "LAYOUT_BURNING_FIELD",
+      "name": "BurningField_Layout",
+      "width": 20,
+      "height": 26,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/BurningField/border.bin",
+      "blockdata_filepath": "data/layouts/BurningField/map.bin"
+    },
+    {
+      "id": "LAYOUT_RAINY_FIELD",
+      "name": "RainyField_Layout",
+      "width": 20,
+      "height": 26,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fortree",
+      "border_filepath": "data/layouts/RainyField/border.bin",
+      "blockdata_filepath": "data/layouts/RainyField/map.bin"
+    },
+    {
+      "id": "LAYOUT_GRASSY_FIELD2",
+      "name": "GrassyField2_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/GrassyField2/border.bin",
+      "blockdata_filepath": "data/layouts/GrassyField2/map.bin"
+    },
+    {
+      "id": "LAYOUT_BURNING_FIELD2",
+      "name": "BurningField2_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/BurningField2/border.bin",
+      "blockdata_filepath": "data/layouts/BurningField2/map.bin"
+    },
+    {
+      "id": "LAYOUT_RAINY_FIELD2",
+      "name": "RainyField2_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fortree",
+      "border_filepath": "data/layouts/RainyField2/border.bin",
+      "blockdata_filepath": "data/layouts/RainyField2/map.bin"
     }
   ]
 }

@@ -1072,3 +1072,15 @@ EventScript_VsSeekerChargingDone::
 	.include "data/text/frontier_brain.inc"
 	.include "data/text/save.inc"
 	.include "data/text/birch_speech.inc"
+
+	.include "data/maps/GrassyField/scripts.inc"
+
+	.include "data/maps/BurningField/scripts.inc"
+
+	.include "data/maps/RainyField/scripts.inc"
+
+	.include "data/maps/GrassyField2/scripts.inc"
+
+	.include "data/maps/BurningField2/scripts.inc"
+
+	.include "data/maps/RainyField2/scripts.inc"
