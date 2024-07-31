@@ -4674,7 +4674,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Jessy = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_TeamRocketMale = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_1,
+    .paletteTag = OBJ_EVENT_PAL_TeamRocketMale,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -4687,7 +4687,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_TeamRocketMale = {
     .oam = &gObjectEventBaseOam_16x32,
     .subspriteTables = sOamTables_16x32,
     .anims = sAnimTable_Standard,
-    .images = sPicTable_TeamRocketMale,
+    .images = gObjectEventPicTable_TeamRocketMale,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 

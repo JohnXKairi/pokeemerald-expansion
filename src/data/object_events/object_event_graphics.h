@@ -375,3 +375,4 @@ const u32 gObjectEventPic_HoOh[] = INCBIN_U32("graphics/object_events/pics/pokem
 const u16 gObjectEventPal_HoOh[] = INCBIN_U16("graphics/object_events/palettes/ho_oh.gbapal");
 const u16 gObjectEventPic_Jessy[] = INCBIN_U16("graphics/object_events/pics/people/Jessy.bmp");
 const u16 gObjectEventPic_TeamRocketMale[] = INCBIN_U16("graphics/object_events/pics/people/TeamRocketMale.4bpp");
+const u16 gObjectEventPalette_TeamRocketMale[] = INCBIN_U16("graphics/object_events/pics/people/TeamRocketMale.gbapal");

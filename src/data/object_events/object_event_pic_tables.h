@@ -1265,6 +1265,14 @@ static const struct SpriteFrameImage sPicTable_Jessy[] = {
     overworld_ascending_frames(gObjectEventPic_Jessy, 2, 4),
 };
 
-static const struct SpriteFrameImage sPicTable_TeamRocketMale[] = {
-    overworld_ascending_frames(gObjectEventPic_TeamRocketMale, 2, 4),
+const struct SpriteFrameImage gObjectEventPicTable_TeamRocketMale[] = {
+    overworld_frame(gObjectEventPic_TeamRocketMale, 4, 4, 0),
+    overworld_frame(gObjectEventPic_TeamRocketMale, 4, 4, 1),
+    overworld_frame(gObjectEventPic_TeamRocketMale, 4, 4, 2),
+    overworld_frame(gObjectEventPic_TeamRocketMale, 4, 4, 3),
+    overworld_frame(gObjectEventPic_TeamRocketMale, 4, 4, 4),
+    overworld_frame(gObjectEventPic_TeamRocketMale, 4, 4, 5),
+    overworld_frame(gObjectEventPic_TeamRocketMale, 4, 4, 6),
+    overworld_frame(gObjectEventPic_TeamRocketMale, 4, 4, 7),
+    overworld_frame(gObjectEventPic_TeamRocketMale, 4, 4, 8),
 };
