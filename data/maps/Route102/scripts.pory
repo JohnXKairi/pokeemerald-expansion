@@ -1,0 +1,194 @@
+raw`Route102_MapScripts::
+	.byte 0
+
+Route102_EventScript_LittleBoy::
+	msgbox Route102_Text_ImNotVeryTall, MSGBOX_NPC
+	end
+
+Route102_EventScript_RouteSignOldale::
+	msgbox Route102_Text_RouteSignOldale, MSGBOX_SIGN
+	end
+
+Route102_EventScript_RouteSignPetalburg::
+	msgbox Route102_Text_RouteSignPetalburg, MSGBOX_SIGN
+	end
+
+Route102_EventScript_Boy::
+	msgbox Route102_Text_CatchWholeBunchOfPokemon, MSGBOX_NPC
+	end
+
+Route102_EventScript_Calvin::
+	trainerbattle_single TRAINER_CALVIN_1, Route102_Text_CalvinIntro, Route102_Text_CalvinDefeated, Route102_EventScript_CalvinRegisterMatchCallAfterBattle
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route102_EventScript_CalvinRematch
+	setvar VAR_0x8004, TRAINER_CALVIN_1
+	specialvar VAR_RESULT, IsTrainerRegistered
+	goto_if_eq VAR_RESULT, FALSE, Route102_EventScript_CalvinTryRegister
+	msgbox Route102_Text_CalvinPostBattle, MSGBOX_DEFAULT
+	release
+	end
+
+Route102_EventScript_CalvinRegisterMatchCallAfterBattle::
+	special PlayerFaceTrainerAfterBattle
+	waitmovement 0
+	goto_if_set FLAG_HAS_MATCH_CALL, Route102_EventScript_CalvinRegisterMatchCall
+	release
+	end
+
+Route102_EventScript_CalvinRegisterMatchCall::
+	msgbox Route102_Text_CalvinRegisterShort, MSGBOX_DEFAULT
+	register_matchcall TRAINER_CALVIN_1
+	release
+	end
+
+Route102_EventScript_CalvinTryRegister::
+	goto_if_set FLAG_HAS_MATCH_CALL, Route102_EventScript_CalvinRegister
+	msgbox Route102_Text_CalvinPostBattle, MSGBOX_DEFAULT
+	release
+	end
+
+Route102_EventScript_CalvinRegister::
+	msgbox Route102_Text_CalvinRegister, MSGBOX_DEFAULT
+	register_matchcall TRAINER_CALVIN_1
+	release
+	end
+
+Route102_EventScript_CalvinRematch::
+	trainerbattle_rematch TRAINER_CALVIN_1, Route102_Text_CalvinRematchIntro, Route102_Text_CalvinRematchDefeated
+	msgbox Route102_Text_CalvinRematchPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route102_EventScript_Rick::
+	trainerbattle_single TRAINER_RICK, Route102_Text_RickIntro, Route102_Text_RickDefeated
+	msgbox Route102_Text_RickPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route102_EventScript_Tiana::
+	trainerbattle_single TRAINER_TIANA, Route102_Text_TianaIntro, Route102_Text_TianaDefeated
+	msgbox Route102_Text_TianaPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route102_EventScript_Allen::
+	trainerbattle_single TRAINER_ALLEN, Route102_Text_AllenIntro, Route102_Text_AllenDefeated
+	msgbox Route102_Text_AllenPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route102_Text_WatchMeCatchPokemon:
+	.string "WALLY: {PLAYER}…\n"
+	.string "POKéMON hide in tall grass like this,\l"
+	.string "don't they?\p"
+	.string "Please watch me and see if I can\n"
+	.string "catch one properly.\p"
+	.string "…Whoa!$"
+
+Route102_Text_WallyIDidIt:
+	.string "WALLY: I did it… It's my…\n"
+	.string "My POKéMON!$"
+
+Route102_Text_LetsGoBack:
+	.string "{PLAYER}, thank you!\n"
+	.string "Let's go back to the GYM!$"
+
+Route102_Text_ImNotVeryTall:
+	.string "I'm…not very tall, so I sink right\n"
+	.string "into tall grass.\p"
+	.string "The grass goes up my nose and…\n"
+	.string "Fwafwafwafwafwa…\p"
+	.string "Fwatchoo!$"
+
+Route102_Text_CatchWholeBunchOfPokemon:
+	.string "I'm going to catch a whole bunch of\n"
+	.string "POKéMON!$"
+
+Route102_Text_RouteSignOldale:
+	.string "ROUTE 102\n"
+	.string "{RIGHT_ARROW} OLDALE TOWN$"
+
+Route102_Text_RouteSignPetalburg:
+	.string "ROUTE 102\n"
+	.string "{LEFT_ARROW} PETALBURG CITY$"
+`
+
+script MeetLeaf1{
+    lockall
+    applymovement(10, rocketRun)
+    applymovement(OBJ_EVENT_ID_PLAYER, playerMove)
+    applymovement(11, leafRun)
+    setflag(FLAG_UNUSED_0x494)
+    removeobject(10)
+    waitmovement(0)
+    goto(MeetLeaf)
+}
+script MeetLeaf2{
+    lockall
+    applymovement(10, rocketRun)
+    applymovement(OBJ_EVENT_ID_PLAYER, playerMove2)
+    applymovement(11, leafRun)
+    setflag(FLAG_UNUSED_0x494)
+    removeobject(10)
+    waitmovement(0)
+    goto(MeetLeaf)
+}
+script MeetLeaf3{
+    lockall
+    applymovement(10, rocketRun)
+    applymovement(OBJ_EVENT_ID_PLAYER, playerMove3)
+    applymovement(11, leafRun)
+    setflag(FLAG_UNUSED_0x494)
+    removeobject(10)
+    waitmovement(0)
+    goto(MeetLeaf)
+}
+
+script MeetLeaf{
+    setvar(VAR_UNUSED_0x4100,1)
+    msgbox(format("???:Did you see a man in black run by?"))
+    waitmessage
+    waitbuttonpress
+    msgbox(format("???:Oh!Sorry. My name is Leaf."))
+    waitmessage
+    waitbuttonpress
+    msgbox(format("Leaf:I was sent here on a mission by PROF OAK. Then I came across this guy dressed in a TEAM ROCKET outfit. They are a bunch of criminals from Kanto."))
+    waitmessage
+    waitbuttonpress
+    msgbox(format("Leaf:They went north? Oh, no! They went to STARTER FIELDS. You are a trainner too, right? Please Help me find them."))
+    waitmessage
+    waitbuttonpress
+    msgbox(format("Leaf:You will!? That's great. Follow me!"))
+    waitmessage
+    waitbuttonpress
+    applymovement(OBJ_EVENT_ID_PLAYER, playerMove4)
+    applymovement(11, leafRun2)
+    waitmovement(0)
+    setflag(FLAG_UNUSED_0x494)
+    removeobject(11)
+    releaseall
+}
+movement rocketRun{
+    walk_fast_right*18
+    walk_fast_up*5
+}
+movement playerMove{
+    walk_up*2
+    face_left
+}
+movement playerMove2{
+    walk_right
+    walk_up*2
+    face_left
+}
+movement playerMove3{
+    walk_up*2
+    walk_left*4
+}
+movement leafRun{
+    walk_fast_right*12
+}
+movement leafRun2{
+    walk_fast_right*18
+    walk_fast_up*5
+}
+movement playerMove4{
+    walk_fast_down
+    face_right
+}
