@@ -19,11 +19,6 @@
       "direction": "up"
     },
     {
-      "map": "MAP_GRASSY_FIELD",
-      "offset": 0,
-      "direction": "down"
-    },
-    {
       "map": "MAP_ROUTE102",
       "offset": -16,
       "direction": "down"

@@ -27,23 +27,13 @@
       "map": "MAP_GRASSY_FIELD",
       "offset": 16,
       "direction": "up"
-    },
-    {
-      "map": "MAP_GRASSY_FIELD2",
-      "offset": 16,
-      "direction": "up"
-    },
-    {
-      "map": "MAP_GRASSY_FIELD",
-      "offset": 16,
-      "direction": "up"
     }
   ],
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY",
-      "x": 18,
-      "y": 11,
+      "x": 21,
+      "y": 2,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -68,8 +58,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BUG_CATCHER",
-      "x": 24,
-      "y": 18,
+      "x": 10,
+      "y": 10,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
@@ -121,7 +111,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
       "x": 20,
-      "y": 10,
+      "y": 2,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
       "movement_range_x": 0,
@@ -133,8 +123,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
-      "x": 21,
-      "y": 10,
+      "x": 19,
+      "y": 2,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
       "movement_range_x": 0,
@@ -146,8 +136,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
-      "x": 20,
-      "y": 7,
+      "x": 26,
+      "y": 15,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 1,
@@ -159,7 +149,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TeamRocketMale",
-      "x": 7,
+      "x": 15,
       "y": 4,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
@@ -172,7 +162,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LEAF",
-      "x": 6,
+      "x": 15,
       "y": 4,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
@@ -180,8 +170,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "FLAG_UNUSED_0x493",
-      "flag": "0"
+      "script": "NULL",
+      "flag": "FLAG_UNUSED_0x493"
     }
   ],
   "warp_events": [
@@ -195,70 +185,25 @@
       "elevation": 0,
       "var": "VAR_UNUSED_0x4100",
       "var_value": "0",
-      "script": "MeetLeaf3"
-    },
-    {
-      "type": "trigger",
-      "x": 19,
-      "y": 6,
-      "elevation": 0,
-      "var": "FLAG_UNUSED_0x495",
-      "var_value": "0",
       "script": "MeetLeaf1"
     },
     {
       "type": "trigger",
-      "x": 18,
-      "y": 6,
-      "elevation": 0,
-      "var": "FLAG_UNUSED_0x495",
-      "var_value": "0",
-      "script": "MeetLeaf2"
-    },
-    {
-      "type": "trigger",
-      "x": 14,
-      "y": 5,
+      "x": 12,
+      "y": 9,
       "elevation": 0,
       "var": "VAR_UNUSED_0x4101",
       "var_value": "0",
-      "script": "NULL"
+      "script": "HelpLeaf"
     },
     {
       "type": "trigger",
-      "x": 14,
-      "y": 4,
+      "x": 12,
+      "y": 8,
       "elevation": 0,
       "var": "VAR_UNUSED_0x4101",
       "var_value": "0",
-      "script": "NULL"
-    },
-    {
-      "type": "trigger",
-      "x": 14,
-      "y": 3,
-      "elevation": 0,
-      "var": "VAR_UNUSED_0x4101",
-      "var_value": "0",
-      "script": "NULL"
-    },
-    {
-      "type": "trigger",
-      "x": 14,
-      "y": 2,
-      "elevation": 0,
-      "var": "VAR_UNUSED_0x4101",
-      "var_value": "0",
-      "script": "NULL"
-    },
-    {
-      "type": "trigger",
-      "x": 23,
-      "y": 4,
-      "elevation": 0,
-      "var": "VAR_TEMP_0",
-      "var_value": "0",
-      "script": "NULL"
+      "script": "HelpLeaf"
     }
   ],
   "bg_events": [

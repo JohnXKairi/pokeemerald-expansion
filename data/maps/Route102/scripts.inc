@@ -1,526 +1,450 @@
 # 1 "data/maps/Route102/scripts.pory"
-Route102_MapScripts::
-# 2 "data/maps/Route102/scripts.pory"
-	.byte 0
-# 3 "data/maps/Route102/scripts.pory"
 
+# 2 "data/maps/Route102/scripts.pory"
+.set LOCALID_Rocket, 10
+# 3 "data/maps/Route102/scripts.pory"
+.set LOCALID_Leaf, 11
 # 4 "data/maps/Route102/scripts.pory"
-Route102_EventScript_LittleBoy::
+
 # 5 "data/maps/Route102/scripts.pory"
-	msgbox Route102_Text_ImNotVeryTall, MSGBOX_NPC
+Route102_MapScripts::
 # 6 "data/maps/Route102/scripts.pory"
-	end
+	.byte 0
 # 7 "data/maps/Route102/scripts.pory"
 
 # 8 "data/maps/Route102/scripts.pory"
-Route102_EventScript_RouteSignOldale::
+Route102_EventScript_LittleBoy::
 # 9 "data/maps/Route102/scripts.pory"
-	msgbox Route102_Text_RouteSignOldale, MSGBOX_SIGN
+	msgbox Route102_Text_ImNotVeryTall, MSGBOX_NPC
 # 10 "data/maps/Route102/scripts.pory"
 	end
 # 11 "data/maps/Route102/scripts.pory"
 
 # 12 "data/maps/Route102/scripts.pory"
-Route102_EventScript_RouteSignPetalburg::
+Route102_EventScript_RouteSignOldale::
 # 13 "data/maps/Route102/scripts.pory"
-	msgbox Route102_Text_RouteSignPetalburg, MSGBOX_SIGN
+	msgbox Route102_Text_RouteSignOldale, MSGBOX_SIGN
 # 14 "data/maps/Route102/scripts.pory"
 	end
 # 15 "data/maps/Route102/scripts.pory"
 
 # 16 "data/maps/Route102/scripts.pory"
-Route102_EventScript_Boy::
+Route102_EventScript_RouteSignPetalburg::
 # 17 "data/maps/Route102/scripts.pory"
-	msgbox Route102_Text_CatchWholeBunchOfPokemon, MSGBOX_NPC
+	msgbox Route102_Text_RouteSignPetalburg, MSGBOX_SIGN
 # 18 "data/maps/Route102/scripts.pory"
 	end
 # 19 "data/maps/Route102/scripts.pory"
 
 # 20 "data/maps/Route102/scripts.pory"
-Route102_EventScript_Calvin::
+Route102_EventScript_Boy::
 # 21 "data/maps/Route102/scripts.pory"
-	trainerbattle_single TRAINER_CALVIN_1, Route102_Text_CalvinIntro, Route102_Text_CalvinDefeated, Route102_EventScript_CalvinRegisterMatchCallAfterBattle
+	msgbox Route102_Text_CatchWholeBunchOfPokemon, MSGBOX_NPC
 # 22 "data/maps/Route102/scripts.pory"
-	specialvar VAR_RESULT, ShouldTryRematchBattle
+	end
 # 23 "data/maps/Route102/scripts.pory"
-	goto_if_eq VAR_RESULT, TRUE, Route102_EventScript_CalvinRematch
+
 # 24 "data/maps/Route102/scripts.pory"
-	setvar VAR_0x8004, TRAINER_CALVIN_1
+Route102_EventScript_Calvin::
 # 25 "data/maps/Route102/scripts.pory"
-	specialvar VAR_RESULT, IsTrainerRegistered
+	trainerbattle_single TRAINER_CALVIN_1, Route102_Text_CalvinIntro, Route102_Text_CalvinDefeated, Route102_EventScript_CalvinRegisterMatchCallAfterBattle
 # 26 "data/maps/Route102/scripts.pory"
-	goto_if_eq VAR_RESULT, FALSE, Route102_EventScript_CalvinTryRegister
+	specialvar VAR_RESULT, ShouldTryRematchBattle
 # 27 "data/maps/Route102/scripts.pory"
-	msgbox Route102_Text_CalvinPostBattle, MSGBOX_DEFAULT
+	goto_if_eq VAR_RESULT, TRUE, Route102_EventScript_CalvinRematch
 # 28 "data/maps/Route102/scripts.pory"
-	release
+	setvar VAR_0x8004, TRAINER_CALVIN_1
 # 29 "data/maps/Route102/scripts.pory"
-	end
+	specialvar VAR_RESULT, IsTrainerRegistered
 # 30 "data/maps/Route102/scripts.pory"
-
+	goto_if_eq VAR_RESULT, FALSE, Route102_EventScript_CalvinTryRegister
 # 31 "data/maps/Route102/scripts.pory"
-Route102_EventScript_CalvinRegisterMatchCallAfterBattle::
-# 32 "data/maps/Route102/scripts.pory"
-	special PlayerFaceTrainerAfterBattle
-# 33 "data/maps/Route102/scripts.pory"
-	waitmovement 0
-# 34 "data/maps/Route102/scripts.pory"
-	goto_if_set FLAG_HAS_MATCH_CALL, Route102_EventScript_CalvinRegisterMatchCall
-# 35 "data/maps/Route102/scripts.pory"
-	release
-# 36 "data/maps/Route102/scripts.pory"
-	end
-# 37 "data/maps/Route102/scripts.pory"
-
-# 38 "data/maps/Route102/scripts.pory"
-Route102_EventScript_CalvinRegisterMatchCall::
-# 39 "data/maps/Route102/scripts.pory"
-	msgbox Route102_Text_CalvinRegisterShort, MSGBOX_DEFAULT
-# 40 "data/maps/Route102/scripts.pory"
-	register_matchcall TRAINER_CALVIN_1
-# 41 "data/maps/Route102/scripts.pory"
-	release
-# 42 "data/maps/Route102/scripts.pory"
-	end
-# 43 "data/maps/Route102/scripts.pory"
-
-# 44 "data/maps/Route102/scripts.pory"
-Route102_EventScript_CalvinTryRegister::
-# 45 "data/maps/Route102/scripts.pory"
-	goto_if_set FLAG_HAS_MATCH_CALL, Route102_EventScript_CalvinRegister
-# 46 "data/maps/Route102/scripts.pory"
 	msgbox Route102_Text_CalvinPostBattle, MSGBOX_DEFAULT
-# 47 "data/maps/Route102/scripts.pory"
+# 32 "data/maps/Route102/scripts.pory"
 	release
-# 48 "data/maps/Route102/scripts.pory"
+# 33 "data/maps/Route102/scripts.pory"
 	end
-# 49 "data/maps/Route102/scripts.pory"
+# 34 "data/maps/Route102/scripts.pory"
 
-# 50 "data/maps/Route102/scripts.pory"
-Route102_EventScript_CalvinRegister::
-# 51 "data/maps/Route102/scripts.pory"
-	msgbox Route102_Text_CalvinRegister, MSGBOX_DEFAULT
-# 52 "data/maps/Route102/scripts.pory"
+# 35 "data/maps/Route102/scripts.pory"
+Route102_EventScript_CalvinRegisterMatchCallAfterBattle::
+# 36 "data/maps/Route102/scripts.pory"
+	special PlayerFaceTrainerAfterBattle
+# 37 "data/maps/Route102/scripts.pory"
+	waitmovement 0
+# 38 "data/maps/Route102/scripts.pory"
+	goto_if_set FLAG_HAS_MATCH_CALL, Route102_EventScript_CalvinRegisterMatchCall
+# 39 "data/maps/Route102/scripts.pory"
+	release
+# 40 "data/maps/Route102/scripts.pory"
+	end
+# 41 "data/maps/Route102/scripts.pory"
+
+# 42 "data/maps/Route102/scripts.pory"
+Route102_EventScript_CalvinRegisterMatchCall::
+# 43 "data/maps/Route102/scripts.pory"
+	msgbox Route102_Text_CalvinRegisterShort, MSGBOX_DEFAULT
+# 44 "data/maps/Route102/scripts.pory"
 	register_matchcall TRAINER_CALVIN_1
-# 53 "data/maps/Route102/scripts.pory"
+# 45 "data/maps/Route102/scripts.pory"
 	release
+# 46 "data/maps/Route102/scripts.pory"
+	end
+# 47 "data/maps/Route102/scripts.pory"
+
+# 48 "data/maps/Route102/scripts.pory"
+Route102_EventScript_CalvinTryRegister::
+# 49 "data/maps/Route102/scripts.pory"
+	goto_if_set FLAG_HAS_MATCH_CALL, Route102_EventScript_CalvinRegister
+# 50 "data/maps/Route102/scripts.pory"
+	msgbox Route102_Text_CalvinPostBattle, MSGBOX_DEFAULT
+# 51 "data/maps/Route102/scripts.pory"
+	release
+# 52 "data/maps/Route102/scripts.pory"
+	end
+# 53 "data/maps/Route102/scripts.pory"
+
 # 54 "data/maps/Route102/scripts.pory"
-	end
+Route102_EventScript_CalvinRegister::
 # 55 "data/maps/Route102/scripts.pory"
-
+	msgbox Route102_Text_CalvinRegister, MSGBOX_DEFAULT
 # 56 "data/maps/Route102/scripts.pory"
-Route102_EventScript_CalvinRematch::
+	register_matchcall TRAINER_CALVIN_1
 # 57 "data/maps/Route102/scripts.pory"
-	trainerbattle_rematch TRAINER_CALVIN_1, Route102_Text_CalvinRematchIntro, Route102_Text_CalvinRematchDefeated
+	release
 # 58 "data/maps/Route102/scripts.pory"
-	msgbox Route102_Text_CalvinRematchPostBattle, MSGBOX_AUTOCLOSE
+	end
 # 59 "data/maps/Route102/scripts.pory"
-	end
+
 # 60 "data/maps/Route102/scripts.pory"
-
+Route102_EventScript_CalvinRematch::
 # 61 "data/maps/Route102/scripts.pory"
-Route102_EventScript_Rick::
+	trainerbattle_rematch TRAINER_CALVIN_1, Route102_Text_CalvinRematchIntro, Route102_Text_CalvinRematchDefeated
 # 62 "data/maps/Route102/scripts.pory"
-	trainerbattle_single TRAINER_RICK, Route102_Text_RickIntro, Route102_Text_RickDefeated
+	msgbox Route102_Text_CalvinRematchPostBattle, MSGBOX_AUTOCLOSE
 # 63 "data/maps/Route102/scripts.pory"
-	msgbox Route102_Text_RickPostBattle, MSGBOX_AUTOCLOSE
+	end
 # 64 "data/maps/Route102/scripts.pory"
-	end
+
 # 65 "data/maps/Route102/scripts.pory"
-
+Route102_EventScript_Rick::
 # 66 "data/maps/Route102/scripts.pory"
-Route102_EventScript_Tiana::
+	trainerbattle_single TRAINER_RICK, Route102_Text_RickIntro, Route102_Text_RickDefeated
 # 67 "data/maps/Route102/scripts.pory"
-	trainerbattle_single TRAINER_TIANA, Route102_Text_TianaIntro, Route102_Text_TianaDefeated
+	msgbox Route102_Text_RickPostBattle, MSGBOX_AUTOCLOSE
 # 68 "data/maps/Route102/scripts.pory"
-	msgbox Route102_Text_TianaPostBattle, MSGBOX_AUTOCLOSE
+	end
 # 69 "data/maps/Route102/scripts.pory"
-	end
+
 # 70 "data/maps/Route102/scripts.pory"
-
+Route102_EventScript_Tiana::
 # 71 "data/maps/Route102/scripts.pory"
-Route102_EventScript_Allen::
+	trainerbattle_single TRAINER_TIANA, Route102_Text_TianaIntro, Route102_Text_TianaDefeated
 # 72 "data/maps/Route102/scripts.pory"
-	trainerbattle_single TRAINER_ALLEN, Route102_Text_AllenIntro, Route102_Text_AllenDefeated
+	msgbox Route102_Text_TianaPostBattle, MSGBOX_AUTOCLOSE
 # 73 "data/maps/Route102/scripts.pory"
-	msgbox Route102_Text_AllenPostBattle, MSGBOX_AUTOCLOSE
-# 74 "data/maps/Route102/scripts.pory"
 	end
+# 74 "data/maps/Route102/scripts.pory"
+
 # 75 "data/maps/Route102/scripts.pory"
-
+Route102_EventScript_Allen::
 # 76 "data/maps/Route102/scripts.pory"
-Route102_Text_WatchMeCatchPokemon:
+	trainerbattle_single TRAINER_ALLEN, Route102_Text_AllenIntro, Route102_Text_AllenDefeated
 # 77 "data/maps/Route102/scripts.pory"
-	.string "WALLY: {PLAYER}…\n"
+	msgbox Route102_Text_AllenPostBattle, MSGBOX_AUTOCLOSE
 # 78 "data/maps/Route102/scripts.pory"
-	.string "POKéMON hide in tall grass like this,\l"
+	end
 # 79 "data/maps/Route102/scripts.pory"
-	.string "don't they?\p"
-# 80 "data/maps/Route102/scripts.pory"
-	.string "Please watch me and see if I can\n"
-# 81 "data/maps/Route102/scripts.pory"
-	.string "catch one properly.\p"
-# 82 "data/maps/Route102/scripts.pory"
-	.string "…Whoa!$"
-# 83 "data/maps/Route102/scripts.pory"
 
+# 80 "data/maps/Route102/scripts.pory"
+Route102_Text_WatchMeCatchPokemon:
+# 81 "data/maps/Route102/scripts.pory"
+	.string "WALLY: {PLAYER}…\n"
+# 82 "data/maps/Route102/scripts.pory"
+	.string "POKéMON hide in tall grass like this,\l"
+# 83 "data/maps/Route102/scripts.pory"
+	.string "don't they?\p"
 # 84 "data/maps/Route102/scripts.pory"
-Route102_Text_WallyIDidIt:
+	.string "Please watch me and see if I can\n"
 # 85 "data/maps/Route102/scripts.pory"
-	.string "WALLY: I did it… It's my…\n"
+	.string "catch one properly.\p"
 # 86 "data/maps/Route102/scripts.pory"
-	.string "My POKéMON!$"
+	.string "…Whoa!$"
 # 87 "data/maps/Route102/scripts.pory"
 
 # 88 "data/maps/Route102/scripts.pory"
-Route102_Text_LetsGoBack:
+Route102_Text_WallyIDidIt:
 # 89 "data/maps/Route102/scripts.pory"
-	.string "{PLAYER}, thank you!\n"
+	.string "WALLY: I did it… It's my…\n"
 # 90 "data/maps/Route102/scripts.pory"
-	.string "Let's go back to the GYM!$"
+	.string "My POKéMON!$"
 # 91 "data/maps/Route102/scripts.pory"
 
 # 92 "data/maps/Route102/scripts.pory"
-Route102_Text_ImNotVeryTall:
+Route102_Text_LetsGoBack:
 # 93 "data/maps/Route102/scripts.pory"
-	.string "I'm…not very tall, so I sink right\n"
+	.string "{PLAYER}, thank you!\n"
 # 94 "data/maps/Route102/scripts.pory"
-	.string "into tall grass.\p"
+	.string "Let's go back to the GYM!$"
 # 95 "data/maps/Route102/scripts.pory"
-	.string "The grass goes up my nose and…\n"
-# 96 "data/maps/Route102/scripts.pory"
-	.string "Fwafwafwafwafwa…\p"
-# 97 "data/maps/Route102/scripts.pory"
-	.string "Fwatchoo!$"
-# 98 "data/maps/Route102/scripts.pory"
 
+# 96 "data/maps/Route102/scripts.pory"
+Route102_Text_ImNotVeryTall:
+# 97 "data/maps/Route102/scripts.pory"
+	.string "I'm…not very tall, so I sink right\n"
+# 98 "data/maps/Route102/scripts.pory"
+	.string "into tall grass.\p"
 # 99 "data/maps/Route102/scripts.pory"
-Route102_Text_CatchWholeBunchOfPokemon:
+	.string "The grass goes up my nose and…\n"
 # 100 "data/maps/Route102/scripts.pory"
-	.string "I'm going to catch a whole bunch of\n"
+	.string "Fwafwafwafwafwa…\p"
 # 101 "data/maps/Route102/scripts.pory"
-	.string "POKéMON!$"
+	.string "Fwatchoo!$"
 # 102 "data/maps/Route102/scripts.pory"
 
 # 103 "data/maps/Route102/scripts.pory"
-Route102_Text_RouteSignOldale:
+Route102_Text_CatchWholeBunchOfPokemon:
 # 104 "data/maps/Route102/scripts.pory"
-	.string "ROUTE 102\n"
+	.string "I'm going to catch a whole bunch of\n"
 # 105 "data/maps/Route102/scripts.pory"
-	.string "{RIGHT_ARROW} OLDALE TOWN$"
+	.string "POKéMON!$"
 # 106 "data/maps/Route102/scripts.pory"
 
 # 107 "data/maps/Route102/scripts.pory"
-Route102_Text_RouteSignPetalburg:
+Route102_Text_RouteSignOldale:
 # 108 "data/maps/Route102/scripts.pory"
 	.string "ROUTE 102\n"
 # 109 "data/maps/Route102/scripts.pory"
+	.string "{RIGHT_ARROW} OLDALE TOWN$"
+# 110 "data/maps/Route102/scripts.pory"
+
+# 111 "data/maps/Route102/scripts.pory"
+Route102_Text_RouteSignPetalburg:
+# 112 "data/maps/Route102/scripts.pory"
+	.string "ROUTE 102\n"
+# 113 "data/maps/Route102/scripts.pory"
 	.string "{LEFT_ARROW} PETALBURG CITY$"
 
-MeetLeaf1::
-# 113 "data/maps/Route102/scripts.pory"
-	lockall
-# 114 "data/maps/Route102/scripts.pory"
-	applymovement 10, rocketRun
-# 115 "data/maps/Route102/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, playerMove
+HelpLeaf::
 # 116 "data/maps/Route102/scripts.pory"
-	applymovement 11, leafRun
+	lock
 # 117 "data/maps/Route102/scripts.pory"
-	setflag FLAG_UNUSED_0x494
+	msgbox HelpLeaf_Text_0
 # 118 "data/maps/Route102/scripts.pory"
-	removeobject 10
+	waitmessage
 # 119 "data/maps/Route102/scripts.pory"
-	waitmovement 0
+	waitbuttonpress
 # 120 "data/maps/Route102/scripts.pory"
-	goto MeetLeaf
+	applymovement OBJ_EVENT_ID_PLAYER, playerMove2
+# 121 "data/maps/Route102/scripts.pory"
+	waitmovement 0
+# 122 "data/maps/Route102/scripts.pory"
+	release
+# 123 "data/maps/Route102/scripts.pory"
+	release
 	return
 
 
-MeetLeaf2::
-# 123 "data/maps/Route102/scripts.pory"
-	lockall
-# 124 "data/maps/Route102/scripts.pory"
-	applymovement 10, rocketRun
-# 125 "data/maps/Route102/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, playerMove2
-# 126 "data/maps/Route102/scripts.pory"
-	applymovement 11, leafRun
+MeetLeaf1::
 # 127 "data/maps/Route102/scripts.pory"
-	setflag FLAG_UNUSED_0x494
+	lock
 # 128 "data/maps/Route102/scripts.pory"
-	removeobject 10
+	applymovement LOCALID_Rocket, rocketRun
 # 129 "data/maps/Route102/scripts.pory"
 	waitmovement 0
 # 130 "data/maps/Route102/scripts.pory"
-	goto MeetLeaf
-	return
-
-
-MeetLeaf3::
+	addobject LOCALID_Leaf
+# 131 "data/maps/Route102/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, playerMove
+# 132 "data/maps/Route102/scripts.pory"
+	applymovement LOCALID_Leaf, leafRun
 # 133 "data/maps/Route102/scripts.pory"
-	lockall
-# 134 "data/maps/Route102/scripts.pory"
-	applymovement 10, rocketRun
-# 135 "data/maps/Route102/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, playerMove3
-# 136 "data/maps/Route102/scripts.pory"
-	applymovement 11, leafRun
-# 137 "data/maps/Route102/scripts.pory"
 	setflag FLAG_UNUSED_0x494
-# 138 "data/maps/Route102/scripts.pory"
-	removeobject 10
-# 139 "data/maps/Route102/scripts.pory"
+# 134 "data/maps/Route102/scripts.pory"
+	removeobject LOCALID_Rocket
+# 135 "data/maps/Route102/scripts.pory"
 	waitmovement 0
-# 140 "data/maps/Route102/scripts.pory"
+# 136 "data/maps/Route102/scripts.pory"
 	goto MeetLeaf
 	return
 
 
 MeetLeaf::
-# 144 "data/maps/Route102/scripts.pory"
+# 141 "data/maps/Route102/scripts.pory"
 	setvar VAR_UNUSED_0x4100, 1
-# 145 "data/maps/Route102/scripts.pory"
+# 142 "data/maps/Route102/scripts.pory"
 	msgbox MeetLeaf_Text_0
+# 143 "data/maps/Route102/scripts.pory"
+	waitmessage
+# 144 "data/maps/Route102/scripts.pory"
+	waitbuttonpress
+# 145 "data/maps/Route102/scripts.pory"
+	msgbox MeetLeaf_Text_1
 # 146 "data/maps/Route102/scripts.pory"
 	waitmessage
 # 147 "data/maps/Route102/scripts.pory"
 	waitbuttonpress
 # 148 "data/maps/Route102/scripts.pory"
-	msgbox MeetLeaf_Text_1
+	msgbox MeetLeaf_Text_2
 # 149 "data/maps/Route102/scripts.pory"
 	waitmessage
 # 150 "data/maps/Route102/scripts.pory"
 	waitbuttonpress
 # 151 "data/maps/Route102/scripts.pory"
-	msgbox MeetLeaf_Text_2
+	msgbox MeetLeaf_Text_3
 # 152 "data/maps/Route102/scripts.pory"
 	waitmessage
 # 153 "data/maps/Route102/scripts.pory"
 	waitbuttonpress
 # 154 "data/maps/Route102/scripts.pory"
-	msgbox MeetLeaf_Text_3
+	msgbox MeetLeaf_Text_4
 # 155 "data/maps/Route102/scripts.pory"
 	waitmessage
 # 156 "data/maps/Route102/scripts.pory"
 	waitbuttonpress
 # 157 "data/maps/Route102/scripts.pory"
-	msgbox MeetLeaf_Text_4
-# 158 "data/maps/Route102/scripts.pory"
-	waitmessage
-# 159 "data/maps/Route102/scripts.pory"
-	waitbuttonpress
-# 160 "data/maps/Route102/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, playerMove4
-# 161 "data/maps/Route102/scripts.pory"
-	applymovement 11, leafRun2
-# 162 "data/maps/Route102/scripts.pory"
+# 158 "data/maps/Route102/scripts.pory"
+	applymovement LOCALID_Leaf, leafRun2
+# 159 "data/maps/Route102/scripts.pory"
 	waitmovement 0
-# 163 "data/maps/Route102/scripts.pory"
-	setflag FLAG_UNUSED_0x494
-# 164 "data/maps/Route102/scripts.pory"
-	removeobject 11
-# 165 "data/maps/Route102/scripts.pory"
-	releaseall
+# 160 "data/maps/Route102/scripts.pory"
+	setflag FLAG_UNUSED_0x493
+# 161 "data/maps/Route102/scripts.pory"
+	removeobject LOCALID_Leaf
+# 162 "data/maps/Route102/scripts.pory"
+	release
 	return
 
 
-# 167 "data/maps/Route102/scripts.pory"
+# 164 "data/maps/Route102/scripts.pory"
 rocketRun:
-# 168 "data/maps/Route102/scripts.pory"
+# 165 "data/maps/Route102/scripts.pory"
 	walk_fast_right
-# 168 "data/maps/Route102/scripts.pory"
+# 165 "data/maps/Route102/scripts.pory"
 	walk_fast_right
-# 168 "data/maps/Route102/scripts.pory"
+# 165 "data/maps/Route102/scripts.pory"
 	walk_fast_right
-# 168 "data/maps/Route102/scripts.pory"
+# 165 "data/maps/Route102/scripts.pory"
 	walk_fast_right
-# 168 "data/maps/Route102/scripts.pory"
+# 165 "data/maps/Route102/scripts.pory"
 	walk_fast_right
-# 168 "data/maps/Route102/scripts.pory"
+# 165 "data/maps/Route102/scripts.pory"
 	walk_fast_right
-# 168 "data/maps/Route102/scripts.pory"
+# 165 "data/maps/Route102/scripts.pory"
 	walk_fast_right
-# 168 "data/maps/Route102/scripts.pory"
+# 165 "data/maps/Route102/scripts.pory"
 	walk_fast_right
-# 168 "data/maps/Route102/scripts.pory"
+# 165 "data/maps/Route102/scripts.pory"
 	walk_fast_right
-# 168 "data/maps/Route102/scripts.pory"
+# 165 "data/maps/Route102/scripts.pory"
 	walk_fast_right
-# 168 "data/maps/Route102/scripts.pory"
-	walk_fast_right
-# 168 "data/maps/Route102/scripts.pory"
-	walk_fast_right
-# 168 "data/maps/Route102/scripts.pory"
-	walk_fast_right
-# 168 "data/maps/Route102/scripts.pory"
-	walk_fast_right
-# 168 "data/maps/Route102/scripts.pory"
-	walk_fast_right
-# 168 "data/maps/Route102/scripts.pory"
-	walk_fast_right
-# 168 "data/maps/Route102/scripts.pory"
-	walk_fast_right
-# 168 "data/maps/Route102/scripts.pory"
-	walk_fast_right
-# 169 "data/maps/Route102/scripts.pory"
+# 166 "data/maps/Route102/scripts.pory"
 	walk_fast_up
-# 169 "data/maps/Route102/scripts.pory"
+# 166 "data/maps/Route102/scripts.pory"
 	walk_fast_up
-# 169 "data/maps/Route102/scripts.pory"
+# 166 "data/maps/Route102/scripts.pory"
 	walk_fast_up
-# 169 "data/maps/Route102/scripts.pory"
-	walk_fast_up
-# 169 "data/maps/Route102/scripts.pory"
+# 166 "data/maps/Route102/scripts.pory"
 	walk_fast_up
 	step_end
 
-# 171 "data/maps/Route102/scripts.pory"
+# 168 "data/maps/Route102/scripts.pory"
 playerMove:
-# 172 "data/maps/Route102/scripts.pory"
+# 169 "data/maps/Route102/scripts.pory"
 	walk_up
-# 172 "data/maps/Route102/scripts.pory"
+# 169 "data/maps/Route102/scripts.pory"
 	walk_up
+# 170 "data/maps/Route102/scripts.pory"
+	walk_left
+# 170 "data/maps/Route102/scripts.pory"
+	walk_left
+# 170 "data/maps/Route102/scripts.pory"
+	walk_left
+# 170 "data/maps/Route102/scripts.pory"
+	walk_left
+	step_end
+
+# 172 "data/maps/Route102/scripts.pory"
+playerMove2:
 # 173 "data/maps/Route102/scripts.pory"
-	face_left
+	walk_right
 	step_end
 
 # 175 "data/maps/Route102/scripts.pory"
-playerMove2:
-# 176 "data/maps/Route102/scripts.pory"
-	walk_right
-# 177 "data/maps/Route102/scripts.pory"
-	walk_up
-# 177 "data/maps/Route102/scripts.pory"
-	walk_up
-# 178 "data/maps/Route102/scripts.pory"
-	face_left
-	step_end
-
-# 180 "data/maps/Route102/scripts.pory"
-playerMove3:
-# 181 "data/maps/Route102/scripts.pory"
-	walk_up
-# 181 "data/maps/Route102/scripts.pory"
-	walk_up
-# 182 "data/maps/Route102/scripts.pory"
-	walk_left
-# 182 "data/maps/Route102/scripts.pory"
-	walk_left
-# 182 "data/maps/Route102/scripts.pory"
-	walk_left
-# 182 "data/maps/Route102/scripts.pory"
-	walk_left
-	step_end
-
-# 184 "data/maps/Route102/scripts.pory"
 leafRun:
-# 185 "data/maps/Route102/scripts.pory"
+# 176 "data/maps/Route102/scripts.pory"
 	walk_fast_right
-# 185 "data/maps/Route102/scripts.pory"
+# 176 "data/maps/Route102/scripts.pory"
 	walk_fast_right
-# 185 "data/maps/Route102/scripts.pory"
-	walk_fast_right
-# 185 "data/maps/Route102/scripts.pory"
-	walk_fast_right
-# 185 "data/maps/Route102/scripts.pory"
-	walk_fast_right
-# 185 "data/maps/Route102/scripts.pory"
-	walk_fast_right
-# 185 "data/maps/Route102/scripts.pory"
-	walk_fast_right
-# 185 "data/maps/Route102/scripts.pory"
-	walk_fast_right
-# 185 "data/maps/Route102/scripts.pory"
-	walk_fast_right
-# 185 "data/maps/Route102/scripts.pory"
-	walk_fast_right
-# 185 "data/maps/Route102/scripts.pory"
-	walk_fast_right
-# 185 "data/maps/Route102/scripts.pory"
+# 176 "data/maps/Route102/scripts.pory"
 	walk_fast_right
 	step_end
 
-# 187 "data/maps/Route102/scripts.pory"
+# 178 "data/maps/Route102/scripts.pory"
 leafRun2:
-# 188 "data/maps/Route102/scripts.pory"
+# 179 "data/maps/Route102/scripts.pory"
 	walk_fast_right
-# 188 "data/maps/Route102/scripts.pory"
+# 179 "data/maps/Route102/scripts.pory"
 	walk_fast_right
-# 188 "data/maps/Route102/scripts.pory"
+# 179 "data/maps/Route102/scripts.pory"
 	walk_fast_right
-# 188 "data/maps/Route102/scripts.pory"
+# 179 "data/maps/Route102/scripts.pory"
 	walk_fast_right
-# 188 "data/maps/Route102/scripts.pory"
+# 179 "data/maps/Route102/scripts.pory"
 	walk_fast_right
-# 188 "data/maps/Route102/scripts.pory"
+# 179 "data/maps/Route102/scripts.pory"
 	walk_fast_right
-# 188 "data/maps/Route102/scripts.pory"
+# 179 "data/maps/Route102/scripts.pory"
 	walk_fast_right
-# 188 "data/maps/Route102/scripts.pory"
+# 179 "data/maps/Route102/scripts.pory"
 	walk_fast_right
-# 188 "data/maps/Route102/scripts.pory"
-	walk_fast_right
-# 188 "data/maps/Route102/scripts.pory"
-	walk_fast_right
-# 188 "data/maps/Route102/scripts.pory"
-	walk_fast_right
-# 188 "data/maps/Route102/scripts.pory"
-	walk_fast_right
-# 188 "data/maps/Route102/scripts.pory"
-	walk_fast_right
-# 188 "data/maps/Route102/scripts.pory"
-	walk_fast_right
-# 188 "data/maps/Route102/scripts.pory"
-	walk_fast_right
-# 188 "data/maps/Route102/scripts.pory"
-	walk_fast_right
-# 188 "data/maps/Route102/scripts.pory"
-	walk_fast_right
-# 188 "data/maps/Route102/scripts.pory"
-	walk_fast_right
-# 189 "data/maps/Route102/scripts.pory"
+# 180 "data/maps/Route102/scripts.pory"
 	walk_fast_up
-# 189 "data/maps/Route102/scripts.pory"
+# 180 "data/maps/Route102/scripts.pory"
 	walk_fast_up
-# 189 "data/maps/Route102/scripts.pory"
+# 180 "data/maps/Route102/scripts.pory"
 	walk_fast_up
-# 189 "data/maps/Route102/scripts.pory"
+# 180 "data/maps/Route102/scripts.pory"
 	walk_fast_up
-# 189 "data/maps/Route102/scripts.pory"
+# 180 "data/maps/Route102/scripts.pory"
 	walk_fast_up
 	step_end
 
-# 191 "data/maps/Route102/scripts.pory"
+# 182 "data/maps/Route102/scripts.pory"
 playerMove4:
-# 192 "data/maps/Route102/scripts.pory"
+# 183 "data/maps/Route102/scripts.pory"
 	walk_fast_down
-# 193 "data/maps/Route102/scripts.pory"
+# 184 "data/maps/Route102/scripts.pory"
 	face_right
 	step_end
 
+HelpLeaf_Text_0:
+# 117 "data/maps/Route102/scripts.pory"
+	.string "{PLAYER}: I should help LEAF.$"
+
 MeetLeaf_Text_0:
-# 145 "data/maps/Route102/scripts.pory"
+# 142 "data/maps/Route102/scripts.pory"
 	.string "???:Did you see a man in black run by?$"
 
 MeetLeaf_Text_1:
-# 148 "data/maps/Route102/scripts.pory"
+# 145 "data/maps/Route102/scripts.pory"
 	.string "???:Oh!Sorry. My name is Leaf.$"
 
 MeetLeaf_Text_2:
-# 151 "data/maps/Route102/scripts.pory"
-	.string "Leaf:I was sent here on a mission by\n"
+# 148 "data/maps/Route102/scripts.pory"
+	.string "LEAF:I was sent here on a mission by\n"
 	.string "PROF OAK. Then I came across this guy\l"
 	.string "dressed in a TEAM ROCKET outfit. They\l"
 	.string "are a bunch of criminals from Kanto.$"
 
 MeetLeaf_Text_3:
-# 154 "data/maps/Route102/scripts.pory"
-	.string "Leaf:They went north? Oh, no! They\n"
+# 151 "data/maps/Route102/scripts.pory"
+	.string "LEAF:They went north? Oh, no! They\n"
 	.string "went to STARTER FIELDS. You are a\l"
 	.string "trainner too, right? Please Help me find\l"
 	.string "them.$"
 
 MeetLeaf_Text_4:
-# 157 "data/maps/Route102/scripts.pory"
-	.string "Leaf:You will!? That's great. Follow me!$"
+# 154 "data/maps/Route102/scripts.pory"
+	.string "LEAF:You will!? That's great. Follow me!$"

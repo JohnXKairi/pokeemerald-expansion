@@ -1,4 +1,8 @@
-raw`Route102_MapScripts::
+raw`
+.set LOCALID_Rocket, 10
+.set LOCALID_Leaf, 11
+
+Route102_MapScripts::
 	.byte 0
 
 Route102_EventScript_LittleBoy::
@@ -108,37 +112,30 @@ Route102_Text_RouteSignPetalburg:
 	.string "ROUTE 102\n"
 	.string "{LEFT_ARROW} PETALBURG CITY$"
 `
+script HelpLeaf{
+	lock
+	msgbox(format("{PLAYER}: I should help LEAF."))
+    waitmessage
+    waitbuttonpress
+	applymovement(OBJ_EVENT_ID_PLAYER, playerMove2)
+	waitmovement(0)
+	release
+	release
+}
 
 script MeetLeaf1{
-    lockall
-    applymovement(10, rocketRun)
+    lock
+    applymovement(LOCALID_Rocket, rocketRun)
+    waitmovement(0)
+    addobject(LOCALID_Leaf)
     applymovement(OBJ_EVENT_ID_PLAYER, playerMove)
-    applymovement(11, leafRun)
+    applymovement(LOCALID_Leaf, leafRun)
     setflag(FLAG_UNUSED_0x494)
-    removeobject(10)
+    removeobject(LOCALID_Rocket)
     waitmovement(0)
     goto(MeetLeaf)
 }
-script MeetLeaf2{
-    lockall
-    applymovement(10, rocketRun)
-    applymovement(OBJ_EVENT_ID_PLAYER, playerMove2)
-    applymovement(11, leafRun)
-    setflag(FLAG_UNUSED_0x494)
-    removeobject(10)
-    waitmovement(0)
-    goto(MeetLeaf)
-}
-script MeetLeaf3{
-    lockall
-    applymovement(10, rocketRun)
-    applymovement(OBJ_EVENT_ID_PLAYER, playerMove3)
-    applymovement(11, leafRun)
-    setflag(FLAG_UNUSED_0x494)
-    removeobject(10)
-    waitmovement(0)
-    goto(MeetLeaf)
-}
+
 
 script MeetLeaf{
     setvar(VAR_UNUSED_0x4100,1)
@@ -148,44 +145,38 @@ script MeetLeaf{
     msgbox(format("???:Oh!Sorry. My name is Leaf."))
     waitmessage
     waitbuttonpress
-    msgbox(format("Leaf:I was sent here on a mission by PROF OAK. Then I came across this guy dressed in a TEAM ROCKET outfit. They are a bunch of criminals from Kanto."))
+    msgbox(format("LEAF:I was sent here on a mission by PROF OAK. Then I came across this guy dressed in a TEAM ROCKET outfit. They are a bunch of criminals from Kanto."))
     waitmessage
     waitbuttonpress
-    msgbox(format("Leaf:They went north? Oh, no! They went to STARTER FIELDS. You are a trainner too, right? Please Help me find them."))
+    msgbox(format("LEAF:They went north? Oh, no! They went to STARTER FIELDS. You are a trainner too, right? Please Help me find them."))
     waitmessage
     waitbuttonpress
-    msgbox(format("Leaf:You will!? That's great. Follow me!"))
+    msgbox(format("LEAF:You will!? That's great. Follow me!"))
     waitmessage
     waitbuttonpress
     applymovement(OBJ_EVENT_ID_PLAYER, playerMove4)
-    applymovement(11, leafRun2)
+    applymovement(LOCALID_Leaf, leafRun2)
     waitmovement(0)
-    setflag(FLAG_UNUSED_0x494)
-    removeobject(11)
-    releaseall
+    setflag(FLAG_UNUSED_0x493)
+    removeobject(LOCALID_Leaf)
+    release
 }
 movement rocketRun{
-    walk_fast_right*18
-    walk_fast_up*5
+    walk_fast_right*10
+    walk_fast_up*4
 }
 movement playerMove{
     walk_up*2
-    face_left
-}
-movement playerMove2{
-    walk_right
-    walk_up*2
-    face_left
-}
-movement playerMove3{
-    walk_up*2
     walk_left*4
 }
+movement playerMove2{
+    walk_right*1
+}
 movement leafRun{
-    walk_fast_right*12
+    walk_fast_right*3
 }
 movement leafRun2{
-    walk_fast_right*18
+    walk_fast_right*8
     walk_fast_up*5
 }
 movement playerMove4{
