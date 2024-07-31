@@ -4690,3 +4690,4 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_TeamRocketMale = {
     .images = sPicTable_TeamRocketMale,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
+
