@@ -1,0 +1,28 @@
+raw`
+.set LOCALID_Leaf, 1
+
+GrassyField_MapScripts::
+	.byte 0
+`
+
+script LeafTalk{
+    lock
+    msgbox(format("LEAF:{PLAYER}! There's two of those thugs. One went towards the BURNING FIELDS up ahead and to the left and the other went to the RAINY FIELDS, up ahead and to the right. You get one of them and I'll get the other."))
+    waitmessage
+    waitbuttonpress
+    setvar(VAR_UNUSED_0x4101,1)
+    release
+}
+
+script LeafTalk1{
+    lock
+    applymovement(OBJ_EVENT_ID_PLAYER,faceLeaf)
+    msgbox(format("LEAF:{PLAYER}! There's two of those thugs. One went towards the BURNING FIELDS up ahead and to the left and the other went to the RAINY FIELDS, up ahead and to the right. You get one of them and I'll get the other."))
+    waitmessage
+    waitbuttonpress
+    setvar(VAR_UNUSED_0x4101,1)
+    release
+}
+movement faceLeaf{
+    face_left
+}

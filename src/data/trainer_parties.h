@@ -11819,3 +11819,16 @@ static const struct TrainerMon sParty_MayLinkPlaceholder[] = {
     .species = SPECIES_KYOGRE,
     }
 };
+
+static const struct TrainerMon sParty_rocketStartField[] = {
+    {
+    .lvl = 5,
+    .species = SPECIES_EKANS,
+    },{
+    .lvl = 5,
+    .species = SPECIES_KOFFING,
+    },{
+    .lvl = 5,
+    .species = SPECIES_MEOWTH,
+    }
+};

@@ -272,10 +272,8 @@
 #define VAR_UNUSED_0x40FC                                0x40FC // Unused Var
 #define VAR_UNUSED_0x40FD                                0x40FD // Unused Var
 #define VAR_UNUSED_0x40FE                                0x40FE // Unused Var
-#define VAR_UNUSED_0x40FF                                0x40FF // Unused Var
+#define VAR_UNUSED_0x4101                                0x40FF //helped leaf
 #define VAR_UNUSED_0x4100                                0x4100 //met leaf    EXTRA VARS!!
-#define VAR_UNUSED_0x4101                                0x4101 //helped leaf
-
 
 #define VARS_END                                         0x4100
 #define VARS_COUNT                                       (VARS_END - VARS_START + 1)

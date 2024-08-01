@@ -10246,6 +10246,18 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_Leaf),
     },
 
+    [TRAINER_ROCKET_START_FIELD] =
+    {
+        .trainerClass = TRAINER_CLASS_RIVAL,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_LEAF,
+        .trainerName = _("ROCKET"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = 0,
+        .party = TRAINER_PARTY(sParty_rocketStartField),
+    },
+
     [TRAINER_BRENDAN_PLACEHOLDER] =
     {
         .trainerClass = TRAINER_CLASS_RS_PROTAG,

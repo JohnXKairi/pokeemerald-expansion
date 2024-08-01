@@ -1,0 +1,20 @@
+raw`BurningField2_MapScripts::
+	.byte 0
+`
+script rocketFight{
+lock
+trainerbattle_single(TRAINER_ROCKET_START_FIELD,startField_Text_Rocket1,startField_Text_Rocket2)
+msgbox(format("{PLAYER}:I should go look for LEAF. She must be at RAINY FIELDS."))
+waitmessage
+waitbuttonpress
+setvar(VAR_UNUSED_0x4101,1)
+release
+}
+
+text startField_Text_Rocket1{
+    format("TEAM ROCKET: Get lost! This doesn't consern you.")
+}
+text startField_Text_Rocket2{
+    format("TEAM ROCKET: How di I lose to a beginner?")
+}
+
