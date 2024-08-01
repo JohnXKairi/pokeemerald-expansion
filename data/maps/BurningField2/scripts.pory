@@ -1,49 +1,35 @@
 raw`
 .set LOCALID_Rocket, 1
-.set LOCALID_Leaf, 2
 
 BurningField2_MapScripts::
 	.byte 0
 `
-script rocketFight{
+script rocketFightBurn{
 lock
-trainerbattle_single(TRAINER_ROCKET_START_FIELD,startField_Text_Rocket1,startField_Text_Rocket2)
+faceplayer
+trainerbattle_single(TRAINER_ROCKET_START_FIELD,startField_Text_Rocket1,startField_Text_Rocket2,rocketFightBurn2)
+release
+}
+
+script rocketFightBurn2{
+msgbox(format("TEAM ROCKET: You'll pay for this."))
+waitmessage
+waitbuttonpress
+fadescreen (FADE_TO_BLACK)
+setflag(FLAG_UNUSED_0x496)
+removeobject(LOCALID_Rocket)
+fadescreen(FADE_FROM_BLACK)
 msgbox(format("{PLAYER}:I should go look for LEAF. She must be at RAINY FIELDS."))
 waitmessage
 waitbuttonpress
 setvar(VAR_UNUSED_0x4101,1)
 release
 }
-script LeafEnding{
-    lock
-    msgbox(format("LEAF:We did it!"))
-    setvar(VAR_UNUSED_0x4101,2)
-    release
-}
-
-script choice{
-    lock
-    if(var(VAR_UNUSED_0x4101)==0){
-        setflag(FLAG_UNUSED_0x495)
-        removeobject(LOCALID_Leaf)
-    }
-    if(var(VAR_UNUSED_0x4101)==1){
-        setflag(FLAG_UNUSED_0x496)
-        removeobject(LOCALID_Rocket)
-    }
-    if(var(VAR_UNUSED_0x4101)==2){
-        setflag(FLAG_UNUSED_0x495)
-        setflag(FLAG_UNUSED_0x496)
-        removeobject(LOCALID_Leaf)
-        removeobject(LOCALID_Rocket)
-    }
-    release
-}
 
 text startField_Text_Rocket1{
     format("TEAM ROCKET: Get lost! This doesn't consern you.")
 }
 text startField_Text_Rocket2{
-    format("TEAM ROCKET: How di I lose to a beginner?")
+    format("TEAM ROCKET: How do I lose to a beginner?")
 }
 

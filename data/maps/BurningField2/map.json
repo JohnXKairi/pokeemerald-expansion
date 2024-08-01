@@ -22,19 +22,6 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_TeamRocketMale",
-      "x": 11,
-      "y": 8,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "rocketFight",
-      "flag": "FLAG_UNUSED_0x496"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_LEAF",
       "x": 10,
       "y": 8,
       "elevation": 0,
@@ -43,104 +30,15 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LeafEnding",
-      "flag": "FLAG_UNUSED_0x495"
+      "script": "rocketFightBurn",
+      "flag": "FLAG_UNUSED_0x496"
     }
   ],
   "warp_events": [
 
   ],
   "coord_events": [
-    {
-      "type": "trigger",
-      "x": 11,
-      "y": 16,
-      "elevation": 0,
-      "var": "VAR_UNUSED_0x4101",
-      "var_value": "0",
-      "script": "choice"
-    },
-    {
-      "type": "trigger",
-      "x": 10,
-      "y": 16,
-      "elevation": 0,
-      "var": "VAR_UNUSED_0x4101",
-      "var_value": "0",
-      "script": "choice"
-    },
-    {
-      "type": "trigger",
-      "x": 9,
-      "y": 16,
-      "elevation": 0,
-      "var": "VAR_UNUSED_0x4101",
-      "var_value": "0",
-      "script": "choice"
-    },
-    {
-      "type": "trigger",
-      "x": 8,
-      "y": 16,
-      "elevation": 0,
-      "var": "VAR_UNUSED_0x4101",
-      "var_value": "0",
-      "script": "choice"
-    },
-    {
-      "type": "trigger",
-      "x": 7,
-      "y": 16,
-      "elevation": 0,
-      "var": "VAR_UNUSED_0x4101",
-      "var_value": "0",
-      "script": "choice"
-    },
-    {
-      "type": "trigger",
-      "x": 6,
-      "y": 16,
-      "elevation": 0,
-      "var": "VAR_UNUSED_0x4101",
-      "var_value": "0",
-      "script": "choice"
-    },
-    {
-      "type": "trigger",
-      "x": 18,
-      "y": 13,
-      "elevation": 0,
-      "var": "VAR_UNUSED_0x4101",
-      "var_value": "0",
-      "script": "choice"
-    },
-    {
-      "type": "trigger",
-      "x": 19,
-      "y": 13,
-      "elevation": 0,
-      "var": "VAR_UNUSED_0x4101",
-      "var_value": "0",
-      "script": "choice"
-    },
-    {
-      "type": "trigger",
-      "x": 2,
-      "y": 13,
-      "elevation": 0,
-      "var": "VAR_UNUSED_0x4101",
-      "var_value": "0",
-      "script": "choice"
-    },
-    {
-      "type": "trigger",
-      "x": 0,
-      "y": 13,
-      "elevation": 0,
-      "var": "VAR_UNUSED_0x4101",
-      "var_value": "0",
-      "script": "choice"
-    }
+
   ],
   "bg_events": [
 

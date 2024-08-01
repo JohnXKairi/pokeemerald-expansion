@@ -1,106 +1,177 @@
 # 1 "data/maps/RainyField2/scripts.pory"
 
 # 2 "data/maps/RainyField2/scripts.pory"
-.set LOCALID_Rocket, 1
+.set LOCALID_Leaf, 1
 # 3 "data/maps/RainyField2/scripts.pory"
-.set LOCALID_Leaf, 2
-# 4 "data/maps/RainyField2/scripts.pory"
 
-# 5 "data/maps/RainyField2/scripts.pory"
+# 4 "data/maps/RainyField2/scripts.pory"
 RainyField2_MapScripts::
-# 6 "data/maps/RainyField2/scripts.pory"
+# 5 "data/maps/RainyField2/scripts.pory"
 	.byte 0
 
-rocketFightRainy::
+LeafRainy::
+# 9 "data/maps/RainyField2/scripts.pory"
+	lock
 # 10 "data/maps/RainyField2/scripts.pory"
-	lock
+	faceplayer
 # 11 "data/maps/RainyField2/scripts.pory"
-	trainerbattle_single TRAINER_ROCKET_START_FIELD, startField_Text_Rocket1Rainy, startField_Text_Rocket2Rainy
+	msgbox LeafRainy_Text_0
 # 12 "data/maps/RainyField2/scripts.pory"
-	msgbox rocketFightRainy_Text_0
-# 13 "data/maps/RainyField2/scripts.pory"
 	waitmessage
-# 14 "data/maps/RainyField2/scripts.pory"
+# 13 "data/maps/RainyField2/scripts.pory"
 	waitbuttonpress
+# 14 "data/maps/RainyField2/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
 # 15 "data/maps/RainyField2/scripts.pory"
-	setvar VAR_UNUSED_0x4101, 1
+	message eggstart
 # 16 "data/maps/RainyField2/scripts.pory"
-	release
-	return
-
-
-LeafEndingRainy::
+	waitfanfare
+# 17 "data/maps/RainyField2/scripts.pory"
+	giveegg SPECIES_ZORUA
+# 18 "data/maps/RainyField2/scripts.pory"
+	msgbox LeafRainy_Text_1
 # 19 "data/maps/RainyField2/scripts.pory"
-	lock
+	waitmessage
 # 20 "data/maps/RainyField2/scripts.pory"
-	msgbox LeafEndingRainy_Text_0
+	waitbuttonpress
 # 21 "data/maps/RainyField2/scripts.pory"
-	setvar VAR_UNUSED_0x4101, 2
+	msgbox LeafRainy_Text_2
 # 22 "data/maps/RainyField2/scripts.pory"
-	release
-	return
-
-
-choiceRainy::
+	waitmessage
+# 23 "data/maps/RainyField2/scripts.pory"
+	waitbuttonpress
+# 24 "data/maps/RainyField2/scripts.pory"
+	msgbox LeafRainy_Text_3
+# 25 "data/maps/RainyField2/scripts.pory"
+	waitmessage
 # 26 "data/maps/RainyField2/scripts.pory"
-	lock
+	waitbuttonpress
 # 27 "data/maps/RainyField2/scripts.pory"
-	compare VAR_UNUSED_0x4101, 0
-	goto_if_eq choiceRainy_2
-choiceRainy_1:
+	msgbox LeafRainy_Text_4
+# 28 "data/maps/RainyField2/scripts.pory"
+	waitmessage
+# 29 "data/maps/RainyField2/scripts.pory"
+	waitbuttonpress
+# 30 "data/maps/RainyField2/scripts.pory"
+	msgbox LeafRainy_Text_5
 # 31 "data/maps/RainyField2/scripts.pory"
-	compare VAR_UNUSED_0x4101, 1
-	goto_if_eq choiceRainy_5
-choiceRainy_4:
+	waitmessage
+# 32 "data/maps/RainyField2/scripts.pory"
+	waitbuttonpress
+# 33 "data/maps/RainyField2/scripts.pory"
+	msgbox LeafRainy_Text_6
+# 34 "data/maps/RainyField2/scripts.pory"
+	waitmessage
 # 35 "data/maps/RainyField2/scripts.pory"
-	compare VAR_UNUSED_0x4101, 2
-	goto_if_eq choiceRainy_8
-choiceRainy_7:
+	waitbuttonpress
+# 36 "data/maps/RainyField2/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 37 "data/maps/RainyField2/scripts.pory"
+	message itemstart
+# 38 "data/maps/RainyField2/scripts.pory"
+	waitfanfare
+# 39 "data/maps/RainyField2/scripts.pory"
+	giveitem ITEM_POKE_BALL, 15
+# 40 "data/maps/RainyField2/scripts.pory"
+	msgbox LeafRainy_Text_7
 # 41 "data/maps/RainyField2/scripts.pory"
+	waitmessage
+# 42 "data/maps/RainyField2/scripts.pory"
+	waitbuttonpress
+# 43 "data/maps/RainyField2/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, MoveAsideStart
+# 44 "data/maps/RainyField2/scripts.pory"
+	applymovement LOCALID_Leaf, LeafExitStart
+# 45 "data/maps/RainyField2/scripts.pory"
+	waitmovement 0
+# 46 "data/maps/RainyField2/scripts.pory"
+	setflag FLAG_UNUSED_0x495
+# 47 "data/maps/RainyField2/scripts.pory"
+	removeobject LOCALID_Leaf
+# 48 "data/maps/RainyField2/scripts.pory"
 	release
 	return
 
-choiceRainy_2:
-# 28 "data/maps/RainyField2/scripts.pory"
-	setflag FLAG_UNUSED_0x495
-# 29 "data/maps/RainyField2/scripts.pory"
-	removeobject LOCALID_Leaf
-	goto choiceRainy_1
 
-choiceRainy_5:
-# 32 "data/maps/RainyField2/scripts.pory"
-	setflag FLAG_UNUSED_0x496
+# 59 "data/maps/RainyField2/scripts.pory"
+MoveAsideStart:
+# 60 "data/maps/RainyField2/scripts.pory"
+	walk_left
+# 61 "data/maps/RainyField2/scripts.pory"
+	face_right
+	step_end
+
+# 64 "data/maps/RainyField2/scripts.pory"
+LeafExitStart:
+# 65 "data/maps/RainyField2/scripts.pory"
+	walk_down
+# 65 "data/maps/RainyField2/scripts.pory"
+	walk_down
+# 65 "data/maps/RainyField2/scripts.pory"
+	walk_down
+# 65 "data/maps/RainyField2/scripts.pory"
+	walk_down
+# 65 "data/maps/RainyField2/scripts.pory"
+	walk_down
+# 65 "data/maps/RainyField2/scripts.pory"
+	walk_down
+# 65 "data/maps/RainyField2/scripts.pory"
+	walk_down
+	step_end
+
+LeafRainy_Text_0:
+# 11 "data/maps/RainyField2/scripts.pory"
+	.string "LEAF:Oh! Hey, {PLAYER}. Looks like\n"
+	.string "we've both drove TEAM ROCKET away. The\l"
+	.string "guy I beat dropped this.$"
+
+LeafRainy_Text_1:
+# 18 "data/maps/RainyField2/scripts.pory"
+	.string "LEAF:I want you to have it. I'm sure\n"
+	.string "you'll look after it.$"
+
+LeafRainy_Text_2:
+# 21 "data/maps/RainyField2/scripts.pory"
+	.string "LEAF:Like I said before I'm here on\n"
+	.string "PROF OAK's request.$"
+
+LeafRainy_Text_3:
+# 24 "data/maps/RainyField2/scripts.pory"
+	.string "LEAF:OH! you're helping PROF BRIDGE?\n"
+	.string "That's perfect. We can work together.$"
+
+LeafRainy_Text_4:
+# 27 "data/maps/RainyField2/scripts.pory"
+	.string "LEAF:PROF OAK wanted to find out why\n"
+	.string "so many POKéMON from so many regions\l"
+	.string "gathered here. It's also a once in a\l"
+	.string "lifetime to study so many species in\l"
+	.string "one region.$"
+
+LeafRainy_Text_5:
+# 30 "data/maps/RainyField2/scripts.pory"
+	.string "LEAF:I'll tell you what. I'll be at\n"
+	.string "SLATEPORT RESORT in SLATEPORT CITY.\l"
+	.string "Come find me there and I'll give you\l"
+	.string "rewards depending on how many POKéMON\l"
+	.string "you've seen and caught. How does that\l"
+	.string "sound?$"
+
+LeafRainy_Text_6:
 # 33 "data/maps/RainyField2/scripts.pory"
-	removeobject LOCALID_Rocket
-	goto choiceRainy_4
+	.string "LEAF:Here. Start with these. I'm sure\n"
+	.string "you know how to use them.$"
 
-choiceRainy_8:
-# 36 "data/maps/RainyField2/scripts.pory"
-	setflag FLAG_UNUSED_0x495
-# 37 "data/maps/RainyField2/scripts.pory"
-	setflag FLAG_UNUSED_0x496
-# 38 "data/maps/RainyField2/scripts.pory"
-	removeobject LOCALID_Leaf
-# 39 "data/maps/RainyField2/scripts.pory"
-	removeobject LOCALID_Rocket
-	goto choiceRainy_7
+LeafRainy_Text_7:
+# 40 "data/maps/RainyField2/scripts.pory"
+	.string "LEAF:And don't worry about TEAM\n"
+	.string "ROCKET. I have a friend of mine on the\l"
+	.string "case. OK! See you at SLATEPORT RESORT.$"
 
+eggstart::
+# 51 "data/maps/RainyField2/scripts.pory"
+	.string "{PLAYER} received the EGG$"
 
-rocketFightRainy_Text_0:
-# 12 "data/maps/RainyField2/scripts.pory"
-	.string "{PLAYER}:I should go look for LEAF.\n"
-	.string "She must be at RAINY FIELDS.$"
-
-LeafEndingRainy_Text_0:
-# 20 "data/maps/RainyField2/scripts.pory"
-	.string "LEAF:We did it!$"
-
-startField_Text_Rocket1Rainy::
-# 44 "data/maps/RainyField2/scripts.pory"
-	.string "TEAM ROCKET: Get lost! This doesn't\n"
-	.string "consern you.$"
-
-startField_Text_Rocket2Rainy::
-# 47 "data/maps/RainyField2/scripts.pory"
-	.string "TEAM ROCKET: How di I lose to a\n"
-	.string "beginner?$"
+itemstart::
+# 55 "data/maps/RainyField2/scripts.pory"
+	.string "{PLAYER} received 15 Pokeballs$"

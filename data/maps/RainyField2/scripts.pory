@@ -1,50 +1,67 @@
 raw`
-.set LOCALID_Rocket, 1
-.set LOCALID_Leaf, 2
+.set LOCALID_Leaf, 1
 
 RainyField2_MapScripts::
 	.byte 0
 
 `
-script rocketFightRainy{
+script LeafRainy{
 lock
-trainerbattle_single(TRAINER_ROCKET_START_FIELD,startField_Text_Rocket1Rainy,startField_Text_Rocket2Rainy)
-msgbox(format("{PLAYER}:I should go look for LEAF. She must be at RAINY FIELDS."))
+faceplayer
+msgbox(format("LEAF:Oh! Hey, {PLAYER}. Looks like we've both drove TEAM ROCKET away. The guy I beat dropped this."))
 waitmessage
 waitbuttonpress
-setvar(VAR_UNUSED_0x4101,1)
+playfanfare (MUS_OBTAIN_ITEM)
+message(eggstart)
+waitfanfare
+giveegg(SPECIES_ZORUA)
+msgbox(format("LEAF:I want you to have it. I'm sure you'll look after it. "))
+waitmessage
+waitbuttonpress
+msgbox(format("LEAF:Like I said before I'm here on PROF OAK's request."))
+waitmessage
+waitbuttonpress
+msgbox(format("LEAF:OH! you're helping PROF BRIDGE? That's perfect. We can work together."))
+waitmessage
+waitbuttonpress
+msgbox(format("LEAF:PROF OAK wanted to find out why so many POKéMON from so many regions gathered here. It's also a once in a lifetime to study so many species in one region."))
+waitmessage
+waitbuttonpress
+msgbox(format("LEAF:I'll tell you what. I'll be at SLATEPORT RESORT in SLATEPORT CITY. Come find me there and I'll give you rewards depending on how many POKéMON you've seen and caught. How does that sound?"))
+waitmessage
+waitbuttonpress
+msgbox(format("LEAF:Here. Start with these. I'm sure you know how to use them."))
+waitmessage
+waitbuttonpress
+playfanfare (MUS_OBTAIN_ITEM)
+message(itemstart)
+waitfanfare
+giveitem(ITEM_POKE_BALL,15)
+msgbox(format("LEAF:And don't worry about TEAM ROCKET. I have a friend of mine on the case. OK! See you at SLATEPORT RESORT."))
+waitmessage
+waitbuttonpress
+applymovement(OBJ_EVENT_ID_PLAYER,MoveAsideStart)
+applymovement(LOCALID_Leaf,LeafExitStart)
+waitmovement(0)
+setflag(FLAG_UNUSED_0x495)
+removeobject(LOCALID_Leaf)
 release
 }
-script LeafEndingRainy{
-    lock
-    msgbox(format("LEAF:We did it!"))
-    setvar(VAR_UNUSED_0x4101,2)
-    release
+
+text eggstart{
+format("{PLAYER} received the EGG")
 }
 
-script choiceRainy{
-    lock
-    if(var(VAR_UNUSED_0x4101)==0){
-        setflag(FLAG_UNUSED_0x495)
-        removeobject(LOCALID_Leaf)
-    }
-    if(var(VAR_UNUSED_0x4101)==1){
-        setflag(FLAG_UNUSED_0x496)
-        removeobject(LOCALID_Rocket)
-    }
-    if(var(VAR_UNUSED_0x4101)==2){
-        setflag(FLAG_UNUSED_0x495)
-        setflag(FLAG_UNUSED_0x496)
-        removeobject(LOCALID_Leaf)
-        removeobject(LOCALID_Rocket)
-    }
-    release
+text itemstart{
+format("{PLAYER} received 15 Pokeballs")
 }
 
-text startField_Text_Rocket1Rainy{
-    format("TEAM ROCKET: Get lost! This doesn't consern you.")
+movement MoveAsideStart{
+    walk_left
+    face_right
 }
-text startField_Text_Rocket2Rainy{
-    format("TEAM ROCKET: How di I lose to a beginner?")
+
+movement LeafExitStart{
+walk_down*7
 }
 
