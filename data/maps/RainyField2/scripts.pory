@@ -2,26 +2,27 @@ raw`
 .set LOCALID_Rocket, 1
 .set LOCALID_Leaf, 2
 
-BurningField2_MapScripts::
+RainyField2_MapScripts::
 	.byte 0
+
 `
-script rocketFight{
+script rocketFightRainy{
 lock
-trainerbattle_single(TRAINER_ROCKET_START_FIELD,startField_Text_Rocket1,startField_Text_Rocket2)
+trainerbattle_single(TRAINER_ROCKET_START_FIELD,startField_Text_Rocket1Rainy,startField_Text_Rocket2Rainy)
 msgbox(format("{PLAYER}:I should go look for LEAF. She must be at RAINY FIELDS."))
 waitmessage
 waitbuttonpress
 setvar(VAR_UNUSED_0x4101,1)
 release
 }
-script LeafEnding{
+script LeafEndingRainy{
     lock
     msgbox(format("LEAF:We did it!"))
     setvar(VAR_UNUSED_0x4101,2)
     release
 }
 
-script choice{
+script choiceRainy{
     lock
     if(var(VAR_UNUSED_0x4101)==0){
         setflag(FLAG_UNUSED_0x495)
@@ -40,10 +41,10 @@ script choice{
     release
 }
 
-text startField_Text_Rocket1{
+text startField_Text_Rocket1Rainy{
     format("TEAM ROCKET: Get lost! This doesn't consern you.")
 }
-text startField_Text_Rocket2{
+text startField_Text_Rocket2Rainy{
     format("TEAM ROCKET: How di I lose to a beginner?")
 }
 

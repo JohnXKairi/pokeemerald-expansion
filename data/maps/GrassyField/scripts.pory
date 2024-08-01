@@ -17,6 +17,8 @@ script LeafTalk{
 script LeafTalk1{
     lock
     applymovement(OBJ_EVENT_ID_PLAYER,faceLeaf)
+    applymovement(LOCALID_Leaf,LeafFacePlayerGrassy)
+    waitmovement(0)
     msgbox(format("LEAF:{PLAYER}! There's two of those thugs. One went towards the BURNING FIELDS up ahead and to the left and the other went to the RAINY FIELDS, up ahead and to the right. You get one of them and I'll get the other."))
     waitmessage
     waitbuttonpress
@@ -25,4 +27,7 @@ script LeafTalk1{
 }
 movement faceLeaf{
     face_left
+}
+movement LeafFacePlayerGrassy{
+    face_right
 }
