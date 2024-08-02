@@ -8,38 +8,27 @@ RainyField2_MapScripts::
 script LeafRainy{
 lock
 faceplayer
-msgbox(format("LEAF:Oh! Hey, {PLAYER}. Looks like we've both drove TEAM ROCKET away. The guy I beat dropped this."))
+msgbox(format("LEAF:Oh! Hey, {PLAYER}. Looks like we've both driven TEAM ROCKET away. The guy I beat dropped this."),MSGBOX_DEFAULT)
 waitmessage
-waitbuttonpress
 playfanfare (MUS_OBTAIN_ITEM)
 message(eggstart)
 waitfanfare
 giveegg(SPECIES_ZORUA)
-msgbox(format("LEAF:I want you to have it. I'm sure you'll look after it. "))
+msgbox(format("LEAF:I want you to have it. I'm sure you'll look after it."),MSGBOX_DEFAULT)
 waitmessage
-waitbuttonpress
-msgbox(format("LEAF:Like I said before I'm here on PROF OAK's request."))
+msgbox(format("LEAF:Like I said before, I'm here on PROF OAK's request."),MSGBOX_DEFAULT)
 waitmessage
-waitbuttonpress
-msgbox(format("LEAF:OH! you're helping PROF BRIDGE? That's perfect. We can work together."))
+msgbox(format("LEAF:OH! You're helping PROF BIRCH? That's perfect. We can work together."),MSGBOX_DEFAULT)
 waitmessage
-waitbuttonpress
-msgbox(format("LEAF:PROF OAK wanted to find out why so many POKéMON from so many regions gathered here. It's also a once in a lifetime to study so many species in one region."))
+msgbox(format("LEAF:PROF OAK wanted to find out why so many POKéMON from so many regions gathered here. It's also a once in a lifetime opportunity to study so many species in one region."),MSGBOX_DEFAULT)
 waitmessage
-waitbuttonpress
-msgbox(format("LEAF:I'll tell you what. I'll be at SLATEPORT RESORT in SLATEPORT CITY. Come find me there and I'll give you rewards depending on how many POKéMON you've seen and caught. How does that sound?"))
+msgbox(format("LEAF:I'll tell you what. I'll be at SLATEPORT RESORT in SLATEPORT CITY. Come find me there, and I'll give you rewards depending on how many POKéMON you've seen and caught. How does that sound?"),MSGBOX_DEFAULT)
 waitmessage
-waitbuttonpress
-msgbox(format("LEAF:Here. Start with these. I'm sure you know how to use them."))
+msgbox(format("LEAF:Here. Start with these. I'm sure you know how to use them."),MSGBOX_DEFAULT)
 waitmessage
-waitbuttonpress
-playfanfare (MUS_OBTAIN_ITEM)
-message(itemstart)
-waitfanfare
 giveitem(ITEM_POKE_BALL,15)
-msgbox(format("LEAF:And don't worry about TEAM ROCKET. I have a friend of mine on the case. OK! See you at SLATEPORT RESORT."))
+msgbox(format("LEAF:And don't worry about TEAM ROCKET. I have a friend of mine on the case. OK! See you at SLATEPORT RESORT."),MSGBOX_DEFAULT)
 waitmessage
-waitbuttonpress
 applymovement(OBJ_EVENT_ID_PLAYER,MoveAsideStart)
 applymovement(LOCALID_Leaf,LeafExitStart)
 waitmovement(0)
@@ -50,10 +39,6 @@ release
 
 text eggstart{
 format("{PLAYER} received the EGG")
-}
-
-text itemstart{
-format("{PLAYER} received 15 Pokeballs")
 }
 
 movement MoveAsideStart{

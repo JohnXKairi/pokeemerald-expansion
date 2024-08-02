@@ -23,7 +23,7 @@ rocketFightBurn::
 
 rocketFightBurn2::
 # 15 "data/maps/BurningField2/scripts.pory"
-	msgbox rocketFightBurn2_Text_0
+	msgbox rocketFightBurn2_Text_0, MSGBOX_DEFAULT
 # 16 "data/maps/BurningField2/scripts.pory"
 	waitmessage
 # 17 "data/maps/BurningField2/scripts.pory"
@@ -37,7 +37,7 @@ rocketFightBurn2::
 # 21 "data/maps/BurningField2/scripts.pory"
 	fadescreen FADE_FROM_BLACK
 # 22 "data/maps/BurningField2/scripts.pory"
-	msgbox rocketFightBurn2_Text_1
+	msgbox rocketFightBurn2_Text_1, MSGBOX_DEFAULT
 # 23 "data/maps/BurningField2/scripts.pory"
 	waitmessage
 # 24 "data/maps/BurningField2/scripts.pory"

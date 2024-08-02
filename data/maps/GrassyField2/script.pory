@@ -1,0 +1,18 @@
+raw`GrassyField2_MapScripts::
+	.byte 0
+`
+script beatRocketStarter{
+    lock
+    if(var(VAR_UNUSED_0x4101)==0){
+    msgbox(format("{PLAYER}:LEAF said I should stop the TEAM ROCKET guy in BURNING FIELDS first. I think it's to the left."),MSGBOX_DEFAULT)
+    waitmessage
+    applymovement(OBJ_EVENT_ID_PLAYER,goBurning)
+    waitmovement(0)
+    }
+    release
+}
+
+movement goBurning{
+    walk_down
+    walk_left
+}

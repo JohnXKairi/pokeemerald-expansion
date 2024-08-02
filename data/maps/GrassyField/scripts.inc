@@ -13,11 +13,9 @@ LeafTalk::
 # 9 "data/maps/GrassyField/scripts.pory"
 	lock
 # 10 "data/maps/GrassyField/scripts.pory"
-	msgbox LeafTalk_Text_0
+	msgbox LeafTalk_Text_0, MSGBOX_DEFAULT
 # 11 "data/maps/GrassyField/scripts.pory"
 	waitmessage
-# 12 "data/maps/GrassyField/scripts.pory"
-	waitbuttonpress
 # 13 "data/maps/GrassyField/scripts.pory"
 	setvar VAR_UNUSED_0x4101, 1
 # 14 "data/maps/GrassyField/scripts.pory"
@@ -38,8 +36,6 @@ LeafTalk1::
 	msgbox LeafTalk1_Text_0
 # 23 "data/maps/GrassyField/scripts.pory"
 	waitmessage
-# 24 "data/maps/GrassyField/scripts.pory"
-	waitbuttonpress
 # 25 "data/maps/GrassyField/scripts.pory"
 	applymovement LOCALID_Leaf, leafLeavegrassy
 # 26 "data/maps/GrassyField/scripts.pory"
