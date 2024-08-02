@@ -1386,8 +1386,20 @@ static const struct TrainerMon sParty_Valerie5[] = {
 
 static const struct TrainerMon sParty_Cindy1[] = {
     {
+    .lvl = 6,
+    .species = SPECIES_CAPSAKID,
+    .heldItem = ITEM_NUGGET
+    },{
+    .lvl = 6,
+    .species = SPECIES_CHERUBI,
+    .heldItem = ITEM_NUGGET
+    },{
     .lvl = 7,
-    .species = SPECIES_ZIGZAGOON,
+    .species = SPECIES_ODDISH,
+    .heldItem = ITEM_NUGGET
+    },{
+    .lvl = 7,
+    .species = SPECIES_BELLSPROUT,
     .heldItem = ITEM_NUGGET
     }
 };
@@ -4042,11 +4054,15 @@ static const struct TrainerMon sParty_Calvin1[] = {
 static const struct TrainerMon sParty_Billy[] = {
     {
     .lvl = 5,
-    .species = SPECIES_ZIGZAGOON,
+    .species = SPECIES_DIGLETT,
+    },
+    {
+    .lvl = 6,
+    .species = SPECIES_DIGLETT_ALOLAN,
     },
     {
     .lvl = 7,
-    .species = SPECIES_SEEDOT,
+    .species = SPECIES_WIGLETT,
     }
 };
 
@@ -8930,6 +8946,12 @@ static const struct TrainerMon sParty_Darian[] = {
     {
     .lvl = 9,
     .species = SPECIES_MAGIKARP,
+    },{
+    .lvl = 7,
+    .species = SPECIES_TATSUGIRI,
+    },{
+    .lvl = 7,
+    .species = SPECIES_REMORAID,
     }
 };
 
