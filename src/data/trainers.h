@@ -10248,9 +10248,9 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_ROCKET_START_FIELD] =
     {
-        .trainerClass = TRAINER_CLASS_RIVAL,
+        .trainerClass = TRAINER_CLASS_TEAM_ROCKET_MALE,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_LEAF,
+        .trainerPic = TRAINER_PIC_TEAM_ROCKET_MALE,
         .trainerName = _("ROCKET"),
         .items = {},
         .doubleBattle = FALSE,

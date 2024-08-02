@@ -7,9 +7,15 @@ GrassyField_MapScripts::
 
 script LeafTalk{
     lock
+    applymovement(OBJ_EVENT_ID_PLAYER,faceLeaf)
+    applymovement(LOCALID_Leaf,LeafFacePlayerGrassy)
+    waitmovement(0)
     msgbox(format("LEAF:{PLAYER}! There are two of those thugs. One went towards the BURNING FIELDS up ahead and to the left, and the other went to the RAINY FIELDS, up ahead and to the right. You get one of them, and I'll get the other."),MSGBOX_DEFAULT)
     waitmessage
-    setvar(VAR_UNUSED_0x4101,1)
+    applymovement(LOCALID_Leaf,leafLeavegrassy)
+    waitmovement(0)
+    setflag(FLAG_UNUSED_0x497)
+    removeobject(LOCALID_Leaf)
     release
 }
 
