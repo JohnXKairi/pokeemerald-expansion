@@ -41,54 +41,54 @@
       "x": 14,
       "y": 2,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
+      "var": "VAR_UNUSED_0x4101",
       "var_value": "0",
-      "script": "NULL"
+      "script": "beatRocketStarter"
     },
     {
       "type": "trigger",
       "x": 15,
       "y": 2,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
+      "var": "VAR_UNUSED_0x4101",
       "var_value": "0",
-      "script": "NULL"
+      "script": "beatRocketStarter"
     },
     {
       "type": "trigger",
       "x": 16,
       "y": 2,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
+      "var": "VAR_UNUSED_0x4101",
       "var_value": "0",
-      "script": "NULL"
+      "script": "beatRocketStarter"
     },
     {
       "type": "trigger",
       "x": 17,
       "y": 2,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
+      "var": "VAR_UNUSED_0x4101",
       "var_value": "0",
-      "script": "NULL"
+      "script": "beatRocketStarter"
     },
     {
       "type": "trigger",
       "x": 18,
       "y": 2,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
+      "var": "VAR_UNUSED_0x4101",
       "var_value": "0",
-      "script": "NULL"
+      "script": "beatRocketStarter"
     },
     {
       "type": "trigger",
       "x": 19,
       "y": 2,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
+      "var": "VAR_UNUSED_0x4101",
       "var_value": "0",
-      "script": "NULL"
+      "script": "beatRocketStarter"
     }
   ],
   "bg_events": [
