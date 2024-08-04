@@ -42152,17 +42152,6 @@ F_TRAINER_FEMALE |
         },
     },
 #line 16800
-        [TRAINER_ROCKET_START_FIELD] =
-    {
-        .trainerClass = TRAINER_CLASS_TEAM_ROCKET_MALE,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_TEAM_ROCKET_MALE,
-        .trainerName = _("ROCKET"),
-        .items = {},
-        .doubleBattle = FALSE,
-        .aiFlags = 0,
-        .party = TRAINER_PARTY(sParty_rocketStartField),
-    },
     [TRAINER_MAY_PLACEHOLDER] =
     {
 #line 16801
@@ -42188,6 +42177,60 @@ F_TRAINER_FEMALE |
 #line 16810
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 16809
+            .lvl = 5,
+            .nature = NATURE_HARDY,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            },
+        },
+    },
+#line 16812
+    [TRAINER_ROCKET_START_FIELD] =
+    {
+#line 16813
+        .trainerName = _("GRUNT"),
+#line 16814
+        .trainerClass = TRAINER_CLASS_TEAM_ROCKET_MALE,
+#line 16815
+        .trainerPic = TRAINER_PIC_TEAM_ROCKET_MALE,
+        .encounterMusic_gender = 
+#line 16817
+            TRAINER_ENCOUNTER_MUSIC_MALE,
+#line 16818
+        .doubleBattle = FALSE,
+#line 16819
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+        .partySize = 3,
+        .party = (const struct TrainerMon[])
+        {
+            {
+#line 16821
+            .species = SPECIES_EKANS,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 16823
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+#line 16822
+            .lvl = 5,
+            .nature = NATURE_HARDY,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            },
+            {
+#line 16825
+            .species = SPECIES_KOFFING,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 16827
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+#line 16826
+            .lvl = 5,
+            .nature = NATURE_HARDY,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            },
+            {
+#line 16829
+            .species = SPECIES_MEOWTH,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 16831
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+#line 16830
             .lvl = 5,
             .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,

@@ -4615,7 +4615,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lugia = {
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
-/*const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HoOh = {
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HoOh = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_HO_OH,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
@@ -4670,7 +4670,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Follower = {
     .anims = sAnimTable_Following,
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
-};*/
+};
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_TeamRocketMale = {
     .tileTag = TAG_NONE,
@@ -4682,7 +4682,8 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_TeamRocketMale = {
     .paletteSlot = PALSLOT_NPC_3,
     .shadowSize = SHADOW_SIZE_M,
     .inanimate = FALSE,
-    .disableReflectionPaletteLoad = FALSE,
+    //.disableReflectionPaletteLoad = FALSE,
+    //.compressed = FALSE,
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_16x32,
     .subspriteTables = sOamTables_16x32,
