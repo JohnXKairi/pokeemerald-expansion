@@ -1,1 +1,294 @@
+raw`
+.set LOCALID_Pinsir, 7
+.set LOCALID_Smoochum, 6
+.set LOCALID_Magby, 4
+.set LOCALID_Elekid, 5
+.set LOCALID_Pichu, 2
+.set LOCALID_Mime_jr, 3
+.set LOCALID_Celebi, 1
+`
 mapscripts BabyVillage_MapScripts {}
+
+script pinsirL{
+    lock
+    applymovement(OBJ_EVENT_ID_PLAYER,FacePinsirL)
+    waitmovement(0)
+    msgbox(format("There is a small Pokemon in danger up ahead. It's fighting a big scary one. This Pokemon seems stronger, somehow. Do you still want to fight it?"), MSGBOX_YESNO)
+    waitmessage 
+    if(var(VAR_RESULT) == YES){
+    applymovement(OBJ_EVENT_ID_PLAYER,FacePinsir)
+    waitmovement(0)
+    applymovement(LOCALID_Pinsir,PinsirDown)
+    waitmovement(0)
+    playmoncry(SPECIES_PINSIR,CRY_MODE_ENCOUNTER)
+        waitmoncry
+        settotemboost (1, 6, 6, -4, 0, 6)  
+        setwildbattle (SPECIES_PINSIR,15)
+        dowildbattle
+        specialvar(VAR_RESULT, GetBattleOutcome)
+	   if(var(VAR_RESULT) == B_OUTCOME_CAUGHT){
+            setvar(VAR_UNUSED_0x4103,1)
+            setflag(FLAG_UNUSED_0x49E)
+            removeobject(LOCALID_Pinsir)
+	    	call(Won)
+	    }
+	    elif(var(VAR_RESULT) == B_OUTCOME_WON){
+            setvar(VAR_UNUSED_0x4103,1)
+            setflag(FLAG_UNUSED_0x49E)
+            removeobject(LOCALID_Pinsir)
+    		call(Won)
+    	}
+    	elif(var(VAR_RESULT) == B_OUTCOME_RAN){
+	    	call(RanAway)
+    	}
+    	elif(var(VAR_RESULT) == B_OUTCOME_PLAYER_TELEPORTED){
+    		call(RanAway)
+	    } 
+    }elif(var(VAR_RESULT) == NO){
+        call(RanAway)
+    }
+    release
+}
+
+script pinsirR{
+    lock
+    msgbox(format("There is a small Pokemon in danger up ahead. It's fighting a big scary one. This Pokemon seems stronger, somehow. Do you still want to fight it?"), MSGBOX_YESNO)
+    waitmessage 
+    if(var(VAR_RESULT) == YES){
+    applymovement(OBJ_EVENT_ID_PLAYER,FacePinsir)
+    waitmovement(0)
+    applymovement(LOCALID_Pinsir,PinsirDown)
+    waitmovement(0)
+    playmoncry(SPECIES_PINSIR,CRY_MODE_ENCOUNTER)
+        waitmoncry
+        settotemboost (1, 6, 6, -4, 0, 6)  
+        setwildbattle (SPECIES_PINSIR,15)
+        dowildbattle
+        specialvar(VAR_RESULT, GetBattleOutcome)
+	    if(var(VAR_RESULT) == B_OUTCOME_CAUGHT){
+            setvar(VAR_UNUSED_0x4103,1)
+            setflag(FLAG_UNUSED_0x49E)
+            removeobject(LOCALID_Pinsir)
+	    	call(Won)
+	    }
+	    elif(var(VAR_RESULT) == B_OUTCOME_WON){
+            setvar(VAR_UNUSED_0x4103,1)
+            setflag(FLAG_UNUSED_0x49E)
+            removeobject(LOCALID_Pinsir)
+    		call(Won)
+    	}
+    	elif(var(VAR_RESULT) == B_OUTCOME_RAN){
+	    	call(RanAway)
+    	}
+    	elif(var(VAR_RESULT) == B_OUTCOME_PLAYER_TELEPORTED){
+    		call(RanAway)
+	    }    
+    }elif(var(VAR_RESULT) == NO){
+        call(RanAway)
+    }
+    release
+}
+script SerebihelpScriptD{
+    lock
+    applymovement(OBJ_EVENT_ID_PLAYER,SerebihelpD)
+    release
+}
+
+script SerebihelpScriptR{
+    lock
+    applymovement(OBJ_EVENT_ID_PLAYER,SerebihelpR)
+    release
+}
+
+script SerebihelpScriptL{
+    lock
+    applymovement(OBJ_EVENT_ID_PLAYER,SerebihelpL)
+    release
+}
+script CelebiTalk{
+    lock
+    faceplayer
+    if(var(VAR_UNUSED_0x4103)==1){
+        msgbox(format("CELEBI:Please find the five missing baby Pokemon. They must be around here."),MSGBOX_DEFAULT)
+        waitmessage
+    }
+    if(var(VAR_UNUSED_0x4103)==2){
+        msgbox(format("CELEBI:Thank you, friend. The babies will be safe now. I'd love to travel with a kind soul like you."),MSGBOX_DEFAULT)
+        waitmessage
+        fadescreen(FADE_TO_BLACK)
+        setflag(FLAG_UNUSED_0x49D)
+        removeobject(LOCALID_Celebi)
+        fadescreen(FADE_FROM_BLACK)
+        givemon(SPECIES_CELEBI,15)
+    }
+    release
+}
+script BabiesHidding{
+    lock
+    msgbox(format("There are baby Pokemon hidding here. Best to not disturb them."),MSGBOX_DEFAULT)
+    waitmessage
+    release
+}
+script foundPichu{
+    lock
+    faceplayer
+    msgbox(format("PICHU:Pi-chu-pi."),MSGBOX_DEFAULT)
+    waitmessage
+    if(flag(FLAG_UNUSED_0x498)==FALSE)
+    {
+        setflag(FLAG_UNUSED_0x498)
+        fadescreen(FADE_TO_BLACK)
+        setobjectxyperm(LOCALID_Pichu,14,15)
+        removeobject(LOCALID_Pichu)
+        addobject(LOCALID_Pichu)
+        applymovement(LOCALID_Pichu,PinsirDown)
+        waitmovement(0)
+        fadescreen(FADE_FROM_BLACK)
+        msgbox(format("PICHU returned to CELEBI"),MSGBOX_DEFAULT)
+        waitmessage
+    }
+    if(flag(FLAG_UNUSED_0x498)==TRUE && flag(FLAG_UNUSED_0x499)==TRUE && flag(FLAG_UNUSED_0x49A)==TRUE && flag(FLAG_UNUSED_0x49B)==TRUE && flag(FLAG_UNUSED_0x49C)==TRUE){
+        msgbox(format("{PLAYER}:That must me all. Time to go back to CELEBI."),MSGBOX_DEFAULT)
+        waitmessage
+        setvar(VAR_UNUSED_0x4103,2)
+    }
+    release
+}
+script foundMagby{
+    lock
+    faceplayer
+    msgbox(format("MAGBY:Mag-mag-by."),MSGBOX_DEFAULT)
+    waitmessage
+    if(flag(FLAG_UNUSED_0x499)==FALSE)
+    {
+        setflag(FLAG_UNUSED_0x499)
+        fadescreen(FADE_TO_BLACK)
+        setobjectxyperm(LOCALID_Magby,14,14)
+        removeobject(LOCALID_Magby)
+        addobject(LOCALID_Magby)
+        applymovement(LOCALID_Magby,PinsirDown)
+        waitmovement(0)
+        fadescreen(FADE_FROM_BLACK)
+        msgbox(format("MAGBY returned to CELEBI"),MSGBOX_DEFAULT)
+        waitmessage
+    }
+    if(flag(FLAG_UNUSED_0x498)==TRUE && flag(FLAG_UNUSED_0x499)==TRUE && flag(FLAG_UNUSED_0x49A)==TRUE && flag(FLAG_UNUSED_0x49B)==TRUE && flag(FLAG_UNUSED_0x49C)==TRUE){
+        msgbox(format("{PLAYER}:That must me all. Time to go back to CELEBI."),MSGBOX_DEFAULT)
+        waitmessage
+        setvar(VAR_UNUSED_0x4103,2)
+    }
+    release
+}
+script foundElekid{
+    lock
+    faceplayer
+    msgbox(format("ELEKID:E-le-kid."),MSGBOX_DEFAULT)
+    waitmessage
+    if(flag(FLAG_UNUSED_0x49A)==FALSE)
+    {
+        setflag(FLAG_UNUSED_0x49A)
+        fadescreen(FADE_TO_BLACK)
+        setobjectxyperm(LOCALID_Elekid,15,14)
+        removeobject(LOCALID_Elekid)
+        addobject(LOCALID_Elekid)
+        applymovement(LOCALID_Elekid,PinsirDown)
+        waitmovement(0)
+        fadescreen(FADE_FROM_BLACK)
+        msgbox(format("ELEKID returned to CELEBI"),MSGBOX_DEFAULT)
+        waitmessage
+    }
+    if(flag(FLAG_UNUSED_0x498)==TRUE && flag(FLAG_UNUSED_0x499)==TRUE && flag(FLAG_UNUSED_0x49A)==TRUE && flag(FLAG_UNUSED_0x49B)==TRUE && flag(FLAG_UNUSED_0x49C)==TRUE){
+        msgbox(format("{PLAYER}:That must me all. Time to go back to CELEBI."),MSGBOX_DEFAULT)
+        waitmessage
+        setvar(VAR_UNUSED_0x4103,2)
+    }
+    release
+}
+script foundSmoochum{
+    lock
+    faceplayer
+    msgbox(format("SMOOCHUM:Smoo-chum."),MSGBOX_DEFAULT)
+    waitmessage
+    if(flag(FLAG_UNUSED_0x49C)==FALSE)
+    {
+        setflag(FLAG_UNUSED_0x49C)
+        fadescreen(FADE_TO_BLACK)
+        setobjectxyperm(LOCALID_Smoochum,16,14)
+        removeobject(LOCALID_Smoochum)
+        addobject(LOCALID_Smoochum)
+        applymovement(LOCALID_Smoochum,PinsirDown)
+        waitmovement(0)
+        fadescreen(FADE_FROM_BLACK)
+        msgbox(format("SMOOCHUM returned to CELEBI"),MSGBOX_DEFAULT)
+        waitmessage
+    }
+    if(flag(FLAG_UNUSED_0x498)==TRUE && flag(FLAG_UNUSED_0x499)==TRUE && flag(FLAG_UNUSED_0x49A)==TRUE && flag(FLAG_UNUSED_0x49B)==TRUE && flag(FLAG_UNUSED_0x49C)==TRUE){
+        msgbox(format("{PLAYER}:That must me all. Time to go back to CELEBI."),MSGBOX_DEFAULT)
+        waitmessage
+        setvar(VAR_UNUSED_0x4103,2)
+    }
+    release
+}
+script foundMimeJr{
+    lock
+    faceplayer
+    msgbox(format("MIME JR:Mime Mime."),MSGBOX_DEFAULT)
+    waitmessage
+    if(flag(FLAG_UNUSED_0x49B)==FALSE)
+    {
+        setflag(FLAG_UNUSED_0x49B)
+        fadescreen(FADE_TO_BLACK)
+        setobjectxyperm(LOCALID_Mime_jr,16,15)
+        removeobject(LOCALID_Mime_jr)
+        addobject(LOCALID_Mime_jr)
+        applymovement(LOCALID_Mime_jr,PinsirDown)
+        waitmovement(0)
+        fadescreen(FADE_FROM_BLACK)
+        msgbox(format("MIME JR returned to CELEBI"),MSGBOX_DEFAULT)
+        waitmessage
+    }
+    if(flag(FLAG_UNUSED_0x498)==TRUE && flag(FLAG_UNUSED_0x499)==TRUE && flag(FLAG_UNUSED_0x49A)==TRUE && flag(FLAG_UNUSED_0x49B)==TRUE && flag(FLAG_UNUSED_0x49C)==TRUE){
+        msgbox(format("{PLAYER}:That must me all. Time to go back to CELEBI."),MSGBOX_DEFAULT)
+        waitmessage
+        setvar(VAR_UNUSED_0x4103,2)
+    }
+    release
+}
+script Won{
+    applymovement(LOCALID_Celebi,SerebihelpD)
+    msgbox(format("The small green Pokemon is using some kind of power!"),MSGBOX_DEFAULT)
+    waitmessage
+    msgbox(format("You can hear a voice in your head!"),MSGBOX_DEFAULT)
+    waitmessage
+    msgbox(format("CELEBI:Thank you, friend. My name is CELEBI. This is the BABY VILLAGE were baby Pokemon can grow safely. Unfortunately the youngest of them got scared by that pinsir and run away. Please help me find them. There's 5 of them. They must be around here, somewhere."),MSGBOX_DEFAULT)
+    waitmessage
+    setvar(VAR_UNUSED_0x40F7,1)
+}
+movement SerebihelpL{
+    walk_fast_left
+}
+movement SerebihelpR{
+    walk_fast_right
+}
+movement PinsirDown{
+    face_down
+}
+movement FacePinsir{
+    walk_up*2
+}
+movement FacePinsirL{
+    walk_right
+    face_up
+}
+script RanAway {
+    msgbox(format("You run away. You can fight again when you are ready!"))
+    waitmessage
+    applymovement(OBJ_EVENT_ID_PLAYER,GoBack)
+    waitmovement(0)
+}
+movement GoBack {
+    walk_fast_down*3
+}
+movement SerebihelpD {
+    walk_fast_down
+}

@@ -276,6 +276,7 @@
 #define VAR_UNUSED_0x4100                                0x4100 //met leaf    EXTRA VARS!!
 #define VAR_UNUSED_0x4101                                0x4101 //helped leaf
 #define VAR_UNUSED_0x4102                                0x4102//talk to leaf in grass fields
+#define VAR_UNUSED_0x4103                                0x4103//baby village
 
 #define VARS_END                                         0x4150
 #define VARS_COUNT                                       (VARS_END - VARS_START + 1)
