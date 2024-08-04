@@ -35,15 +35,15 @@
       "x": 8,
       "y": 3,
       "elevation": 0,
-      "dest_map": "MAP_PETALBURG_WOODS",
+      "dest_map": "MAP_BABY_VILLAGE",
       "dest_warp_id": "0"
     },
     {
       "x": 9,
       "y": 3,
       "elevation": 0,
-      "dest_map": "MAP_FOGGY_WOODS",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_BABY_VILLAGE",
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [

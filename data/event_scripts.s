@@ -1088,3 +1088,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/RainyField2/scripts.inc"
 
 	.include "data/maps/FoggyWoods/scripts.inc"
+
+	.include "data/maps/BabyVillage/scripts.inc"

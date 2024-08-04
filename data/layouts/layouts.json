@@ -4480,6 +4480,16 @@
       "secondary_tileset": "gTileset_Rustboro",
       "border_filepath": "data/layouts/FoggyWoods/border.bin",
       "blockdata_filepath": "data/layouts/FoggyWoods/map.bin"
+    },
+    {
+      "id": "LAYOUT_BABY_VILLAGE",
+      "name": "BabyVillage_Layout",
+      "width": 30,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/BabyVillage/border.bin",
+      "blockdata_filepath": "data/layouts/BabyVillage/map.bin"
     }
   ]
 }

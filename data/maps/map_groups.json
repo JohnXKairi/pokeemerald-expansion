@@ -436,7 +436,8 @@
     "TerraCave_End",
     "AlteringCave",
     "MeteorFalls_StevensCave",
-    "FoggyWoods"
+    "FoggyWoods",
+    "BabyVillage"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",
