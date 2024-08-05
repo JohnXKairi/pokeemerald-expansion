@@ -52,7 +52,7 @@ script pinsirL{
 
 script pinsirR{
     lock
-    msgbox(format("There is a small Pokemon in danger up ahead. It's fighting a big scary one. This Pokemon seems stronger, somehow. Do you still want to fight it?"), MSGBOX_YESNO)
+    msgbox(format("There is a small Pokemon in danger up ahead. It's fighting a big scary one. This Pokemon seems stronger, somehow. Do you still want to fight it?(suggested lv 15)"), MSGBOX_YESNO)
     waitmessage 
     if(var(VAR_RESULT) == YES){
     applymovement(OBJ_EVENT_ID_PLAYER,FacePinsir)
