@@ -61,5 +61,5 @@ startField_Text_Rocket1::
 
 startField_Text_Rocket2::
 # 30 "data/maps/BurningField2/scripts.pory"
-	.string "TEAM ROCKET: How do I lose to a\n"
+	.string "TEAM ROCKET: How did I lose to a\n"
 	.string "beginner?$"
