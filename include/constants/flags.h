@@ -1230,7 +1230,7 @@
 #define FLAG_UNUSED_0x49C                                           0x49C // smoochum
 #define FLAG_UNUSED_0x49D                                           0x49D // celebi
 #define FLAG_UNUSED_0x49E                                           0x49E // Pinsir
-#define FLAG_UNUSED_0x49F                                           0x49F // Unused Flag
+#define FLAG_UNUSED_0x49F                                           0x49F // route 104 pkbl
 #define FLAG_UNUSED_0x4A0                                           0x4A0 // Unused Flag
 #define FLAG_UNUSED_0x4A1                                           0x4A1 // Unused Flag
 #define FLAG_UNUSED_0x4A2                                           0x4A2 // Unused Flag

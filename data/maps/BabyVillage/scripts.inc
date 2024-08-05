@@ -248,7 +248,7 @@ CelebiTalk_1:
 	compare VAR_UNUSED_0x4103, 2
 	goto_if_eq CelebiTalk_5
 CelebiTalk_4:
-# 124 "data/maps/BabyVillage/scripts.pory"
+# 126 "data/maps/BabyVillage/scripts.pory"
 	release
 	return
 
@@ -274,440 +274,464 @@ CelebiTalk_5:
 	fadescreen FADE_FROM_BLACK
 # 122 "data/maps/BabyVillage/scripts.pory"
 	givemon SPECIES_CELEBI, 15
+# 123 "data/maps/BabyVillage/scripts.pory"
+	msgbox CelebiTalk_Text_2, MSGBOX_DEFAULT
+# 124 "data/maps/BabyVillage/scripts.pory"
+	waitmessage
 	goto CelebiTalk_4
 
 
 BabiesHidding::
-# 127 "data/maps/BabyVillage/scripts.pory"
-	lock
-# 128 "data/maps/BabyVillage/scripts.pory"
-	msgbox BabiesHidding_Text_0, MSGBOX_DEFAULT
 # 129 "data/maps/BabyVillage/scripts.pory"
-	waitmessage
+	lock
 # 130 "data/maps/BabyVillage/scripts.pory"
+	msgbox BabiesHidding_Text_0, MSGBOX_DEFAULT
+# 131 "data/maps/BabyVillage/scripts.pory"
+	waitmessage
+# 132 "data/maps/BabyVillage/scripts.pory"
 	release
 	return
 
 
 foundPichu::
-# 133 "data/maps/BabyVillage/scripts.pory"
-	lock
-# 134 "data/maps/BabyVillage/scripts.pory"
-	faceplayer
 # 135 "data/maps/BabyVillage/scripts.pory"
-	msgbox foundPichu_Text_0, MSGBOX_DEFAULT
+	lock
 # 136 "data/maps/BabyVillage/scripts.pory"
-	waitmessage
+	faceplayer
 # 137 "data/maps/BabyVillage/scripts.pory"
+	msgbox foundPichu_Text_0, MSGBOX_DEFAULT
+# 138 "data/maps/BabyVillage/scripts.pory"
+	waitmessage
+# 139 "data/maps/BabyVillage/scripts.pory"
 	goto_if_unset FLAG_UNUSED_0x498, foundPichu_2
 foundPichu_1:
-# 148 "data/maps/BabyVillage/scripts.pory"
+# 152 "data/maps/BabyVillage/scripts.pory"
 	goto_if_set FLAG_UNUSED_0x498, foundPichu_7
 foundPichu_4:
-# 153 "data/maps/BabyVillage/scripts.pory"
+# 157 "data/maps/BabyVillage/scripts.pory"
 	release
 	return
 
 foundPichu_2:
-# 139 "data/maps/BabyVillage/scripts.pory"
-	setflag FLAG_UNUSED_0x498
-# 140 "data/maps/BabyVillage/scripts.pory"
-	fadescreen FADE_TO_BLACK
 # 141 "data/maps/BabyVillage/scripts.pory"
-	setobjectxyperm LOCALID_Pichu, 14, 15
+	setflag FLAG_UNUSED_0x498
 # 142 "data/maps/BabyVillage/scripts.pory"
-	removeobject LOCALID_Pichu
+	fadescreen FADE_TO_BLACK
 # 143 "data/maps/BabyVillage/scripts.pory"
-	addobject LOCALID_Pichu
+	setobjectxyperm LOCALID_Pichu, 14, 15
 # 144 "data/maps/BabyVillage/scripts.pory"
-	fadescreen FADE_FROM_BLACK
+	removeobject LOCALID_Pichu
 # 145 "data/maps/BabyVillage/scripts.pory"
-	msgbox foundPichu_Text_1, MSGBOX_DEFAULT
+	addobject LOCALID_Pichu
 # 146 "data/maps/BabyVillage/scripts.pory"
+	applymovement LOCALID_Pichu, PinsirDown
+# 147 "data/maps/BabyVillage/scripts.pory"
+	waitmovement 0
+# 148 "data/maps/BabyVillage/scripts.pory"
+	fadescreen FADE_FROM_BLACK
+# 149 "data/maps/BabyVillage/scripts.pory"
+	msgbox foundPichu_Text_1, MSGBOX_DEFAULT
+# 150 "data/maps/BabyVillage/scripts.pory"
 	waitmessage
 	goto foundPichu_1
 
 foundPichu_5:
-# 149 "data/maps/BabyVillage/scripts.pory"
+# 153 "data/maps/BabyVillage/scripts.pory"
 	msgbox foundPichu_Text_2, MSGBOX_DEFAULT
-# 150 "data/maps/BabyVillage/scripts.pory"
+# 154 "data/maps/BabyVillage/scripts.pory"
 	waitmessage
-# 151 "data/maps/BabyVillage/scripts.pory"
+# 155 "data/maps/BabyVillage/scripts.pory"
 	setvar VAR_UNUSED_0x4103, 2
 	goto foundPichu_4
 
 foundPichu_6:
-# 148 "data/maps/BabyVillage/scripts.pory"
+# 152 "data/maps/BabyVillage/scripts.pory"
 	goto_if_set FLAG_UNUSED_0x49A, foundPichu_11
 	goto foundPichu_4
 
 foundPichu_7:
-# 148 "data/maps/BabyVillage/scripts.pory"
+# 152 "data/maps/BabyVillage/scripts.pory"
 	goto_if_set FLAG_UNUSED_0x499, foundPichu_6
 	goto foundPichu_4
 
 foundPichu_10:
-# 148 "data/maps/BabyVillage/scripts.pory"
+# 152 "data/maps/BabyVillage/scripts.pory"
 	goto_if_set FLAG_UNUSED_0x49C, foundPichu_5
 	goto foundPichu_4
 
 foundPichu_11:
-# 148 "data/maps/BabyVillage/scripts.pory"
+# 152 "data/maps/BabyVillage/scripts.pory"
 	goto_if_set FLAG_UNUSED_0x49B, foundPichu_10
 	goto foundPichu_4
 
 
 foundMagby::
-# 156 "data/maps/BabyVillage/scripts.pory"
-	lock
-# 157 "data/maps/BabyVillage/scripts.pory"
-	faceplayer
-# 158 "data/maps/BabyVillage/scripts.pory"
-	msgbox foundMagby_Text_0, MSGBOX_DEFAULT
-# 159 "data/maps/BabyVillage/scripts.pory"
-	waitmessage
 # 160 "data/maps/BabyVillage/scripts.pory"
+	lock
+# 161 "data/maps/BabyVillage/scripts.pory"
+	faceplayer
+# 162 "data/maps/BabyVillage/scripts.pory"
+	msgbox foundMagby_Text_0, MSGBOX_DEFAULT
+# 163 "data/maps/BabyVillage/scripts.pory"
+	waitmessage
+# 164 "data/maps/BabyVillage/scripts.pory"
 	goto_if_unset FLAG_UNUSED_0x499, foundMagby_2
 foundMagby_1:
-# 171 "data/maps/BabyVillage/scripts.pory"
+# 177 "data/maps/BabyVillage/scripts.pory"
 	goto_if_set FLAG_UNUSED_0x498, foundMagby_7
 foundMagby_4:
-# 176 "data/maps/BabyVillage/scripts.pory"
+# 182 "data/maps/BabyVillage/scripts.pory"
 	release
 	return
 
 foundMagby_2:
-# 162 "data/maps/BabyVillage/scripts.pory"
-	setflag FLAG_UNUSED_0x499
-# 163 "data/maps/BabyVillage/scripts.pory"
-	fadescreen FADE_TO_BLACK
-# 164 "data/maps/BabyVillage/scripts.pory"
-	setobjectxyperm LOCALID_Magby, 14, 14
-# 165 "data/maps/BabyVillage/scripts.pory"
-	removeobject LOCALID_Magby
 # 166 "data/maps/BabyVillage/scripts.pory"
-	addobject LOCALID_Magby
+	setflag FLAG_UNUSED_0x499
 # 167 "data/maps/BabyVillage/scripts.pory"
-	fadescreen FADE_FROM_BLACK
+	fadescreen FADE_TO_BLACK
 # 168 "data/maps/BabyVillage/scripts.pory"
-	msgbox foundMagby_Text_1, MSGBOX_DEFAULT
+	setobjectxyperm LOCALID_Magby, 14, 14
 # 169 "data/maps/BabyVillage/scripts.pory"
+	removeobject LOCALID_Magby
+# 170 "data/maps/BabyVillage/scripts.pory"
+	addobject LOCALID_Magby
+# 171 "data/maps/BabyVillage/scripts.pory"
+	applymovement LOCALID_Magby, PinsirDown
+# 172 "data/maps/BabyVillage/scripts.pory"
+	waitmovement 0
+# 173 "data/maps/BabyVillage/scripts.pory"
+	fadescreen FADE_FROM_BLACK
+# 174 "data/maps/BabyVillage/scripts.pory"
+	msgbox foundMagby_Text_1, MSGBOX_DEFAULT
+# 175 "data/maps/BabyVillage/scripts.pory"
 	waitmessage
 	goto foundMagby_1
 
 foundMagby_5:
-# 172 "data/maps/BabyVillage/scripts.pory"
+# 178 "data/maps/BabyVillage/scripts.pory"
 	msgbox foundPichu_Text_2, MSGBOX_DEFAULT
-# 173 "data/maps/BabyVillage/scripts.pory"
+# 179 "data/maps/BabyVillage/scripts.pory"
 	waitmessage
-# 174 "data/maps/BabyVillage/scripts.pory"
+# 180 "data/maps/BabyVillage/scripts.pory"
 	setvar VAR_UNUSED_0x4103, 2
 	goto foundMagby_4
 
 foundMagby_6:
-# 171 "data/maps/BabyVillage/scripts.pory"
+# 177 "data/maps/BabyVillage/scripts.pory"
 	goto_if_set FLAG_UNUSED_0x49A, foundMagby_11
 	goto foundMagby_4
 
 foundMagby_7:
-# 171 "data/maps/BabyVillage/scripts.pory"
+# 177 "data/maps/BabyVillage/scripts.pory"
 	goto_if_set FLAG_UNUSED_0x499, foundMagby_6
 	goto foundMagby_4
 
 foundMagby_10:
-# 171 "data/maps/BabyVillage/scripts.pory"
+# 177 "data/maps/BabyVillage/scripts.pory"
 	goto_if_set FLAG_UNUSED_0x49C, foundMagby_5
 	goto foundMagby_4
 
 foundMagby_11:
-# 171 "data/maps/BabyVillage/scripts.pory"
+# 177 "data/maps/BabyVillage/scripts.pory"
 	goto_if_set FLAG_UNUSED_0x49B, foundMagby_10
 	goto foundMagby_4
 
 
 foundElekid::
-# 179 "data/maps/BabyVillage/scripts.pory"
+# 185 "data/maps/BabyVillage/scripts.pory"
 	lock
-# 180 "data/maps/BabyVillage/scripts.pory"
+# 186 "data/maps/BabyVillage/scripts.pory"
 	faceplayer
-# 181 "data/maps/BabyVillage/scripts.pory"
+# 187 "data/maps/BabyVillage/scripts.pory"
 	msgbox foundElekid_Text_0, MSGBOX_DEFAULT
-# 182 "data/maps/BabyVillage/scripts.pory"
+# 188 "data/maps/BabyVillage/scripts.pory"
 	waitmessage
-# 183 "data/maps/BabyVillage/scripts.pory"
+# 189 "data/maps/BabyVillage/scripts.pory"
 	goto_if_unset FLAG_UNUSED_0x49A, foundElekid_2
 foundElekid_1:
-# 194 "data/maps/BabyVillage/scripts.pory"
+# 202 "data/maps/BabyVillage/scripts.pory"
 	goto_if_set FLAG_UNUSED_0x498, foundElekid_7
 foundElekid_4:
-# 199 "data/maps/BabyVillage/scripts.pory"
+# 207 "data/maps/BabyVillage/scripts.pory"
 	release
 	return
 
 foundElekid_2:
-# 185 "data/maps/BabyVillage/scripts.pory"
-	setflag FLAG_UNUSED_0x49A
-# 186 "data/maps/BabyVillage/scripts.pory"
-	fadescreen FADE_TO_BLACK
-# 187 "data/maps/BabyVillage/scripts.pory"
-	setobjectxyperm LOCALID_Elekid, 15, 14
-# 188 "data/maps/BabyVillage/scripts.pory"
-	removeobject LOCALID_Elekid
-# 189 "data/maps/BabyVillage/scripts.pory"
-	addobject LOCALID_Elekid
-# 190 "data/maps/BabyVillage/scripts.pory"
-	fadescreen FADE_FROM_BLACK
 # 191 "data/maps/BabyVillage/scripts.pory"
-	msgbox foundElekid_Text_1, MSGBOX_DEFAULT
+	setflag FLAG_UNUSED_0x49A
 # 192 "data/maps/BabyVillage/scripts.pory"
+	fadescreen FADE_TO_BLACK
+# 193 "data/maps/BabyVillage/scripts.pory"
+	setobjectxyperm LOCALID_Elekid, 15, 14
+# 194 "data/maps/BabyVillage/scripts.pory"
+	removeobject LOCALID_Elekid
+# 195 "data/maps/BabyVillage/scripts.pory"
+	addobject LOCALID_Elekid
+# 196 "data/maps/BabyVillage/scripts.pory"
+	applymovement LOCALID_Elekid, PinsirDown
+# 197 "data/maps/BabyVillage/scripts.pory"
+	waitmovement 0
+# 198 "data/maps/BabyVillage/scripts.pory"
+	fadescreen FADE_FROM_BLACK
+# 199 "data/maps/BabyVillage/scripts.pory"
+	msgbox foundElekid_Text_1, MSGBOX_DEFAULT
+# 200 "data/maps/BabyVillage/scripts.pory"
 	waitmessage
 	goto foundElekid_1
 
 foundElekid_5:
-# 195 "data/maps/BabyVillage/scripts.pory"
+# 203 "data/maps/BabyVillage/scripts.pory"
 	msgbox foundPichu_Text_2, MSGBOX_DEFAULT
-# 196 "data/maps/BabyVillage/scripts.pory"
+# 204 "data/maps/BabyVillage/scripts.pory"
 	waitmessage
-# 197 "data/maps/BabyVillage/scripts.pory"
+# 205 "data/maps/BabyVillage/scripts.pory"
 	setvar VAR_UNUSED_0x4103, 2
 	goto foundElekid_4
 
 foundElekid_6:
-# 194 "data/maps/BabyVillage/scripts.pory"
+# 202 "data/maps/BabyVillage/scripts.pory"
 	goto_if_set FLAG_UNUSED_0x49A, foundElekid_11
 	goto foundElekid_4
 
 foundElekid_7:
-# 194 "data/maps/BabyVillage/scripts.pory"
+# 202 "data/maps/BabyVillage/scripts.pory"
 	goto_if_set FLAG_UNUSED_0x499, foundElekid_6
 	goto foundElekid_4
 
 foundElekid_10:
-# 194 "data/maps/BabyVillage/scripts.pory"
+# 202 "data/maps/BabyVillage/scripts.pory"
 	goto_if_set FLAG_UNUSED_0x49C, foundElekid_5
 	goto foundElekid_4
 
 foundElekid_11:
-# 194 "data/maps/BabyVillage/scripts.pory"
+# 202 "data/maps/BabyVillage/scripts.pory"
 	goto_if_set FLAG_UNUSED_0x49B, foundElekid_10
 	goto foundElekid_4
 
 
 foundSmoochum::
-# 202 "data/maps/BabyVillage/scripts.pory"
+# 210 "data/maps/BabyVillage/scripts.pory"
 	lock
-# 203 "data/maps/BabyVillage/scripts.pory"
+# 211 "data/maps/BabyVillage/scripts.pory"
 	faceplayer
-# 204 "data/maps/BabyVillage/scripts.pory"
+# 212 "data/maps/BabyVillage/scripts.pory"
 	msgbox foundSmoochum_Text_0, MSGBOX_DEFAULT
-# 205 "data/maps/BabyVillage/scripts.pory"
+# 213 "data/maps/BabyVillage/scripts.pory"
 	waitmessage
-# 206 "data/maps/BabyVillage/scripts.pory"
+# 214 "data/maps/BabyVillage/scripts.pory"
 	goto_if_unset FLAG_UNUSED_0x49C, foundSmoochum_2
 foundSmoochum_1:
-# 217 "data/maps/BabyVillage/scripts.pory"
+# 227 "data/maps/BabyVillage/scripts.pory"
 	goto_if_set FLAG_UNUSED_0x498, foundSmoochum_7
 foundSmoochum_4:
-# 222 "data/maps/BabyVillage/scripts.pory"
+# 232 "data/maps/BabyVillage/scripts.pory"
 	release
 	return
 
 foundSmoochum_2:
-# 208 "data/maps/BabyVillage/scripts.pory"
+# 216 "data/maps/BabyVillage/scripts.pory"
 	setflag FLAG_UNUSED_0x49C
-# 209 "data/maps/BabyVillage/scripts.pory"
+# 217 "data/maps/BabyVillage/scripts.pory"
 	fadescreen FADE_TO_BLACK
-# 210 "data/maps/BabyVillage/scripts.pory"
+# 218 "data/maps/BabyVillage/scripts.pory"
 	setobjectxyperm LOCALID_Smoochum, 16, 14
-# 211 "data/maps/BabyVillage/scripts.pory"
+# 219 "data/maps/BabyVillage/scripts.pory"
 	removeobject LOCALID_Smoochum
-# 212 "data/maps/BabyVillage/scripts.pory"
+# 220 "data/maps/BabyVillage/scripts.pory"
 	addobject LOCALID_Smoochum
-# 213 "data/maps/BabyVillage/scripts.pory"
+# 221 "data/maps/BabyVillage/scripts.pory"
+	applymovement LOCALID_Smoochum, PinsirDown
+# 222 "data/maps/BabyVillage/scripts.pory"
+	waitmovement 0
+# 223 "data/maps/BabyVillage/scripts.pory"
 	fadescreen FADE_FROM_BLACK
-# 214 "data/maps/BabyVillage/scripts.pory"
+# 224 "data/maps/BabyVillage/scripts.pory"
 	msgbox foundSmoochum_Text_1, MSGBOX_DEFAULT
-# 215 "data/maps/BabyVillage/scripts.pory"
+# 225 "data/maps/BabyVillage/scripts.pory"
 	waitmessage
 	goto foundSmoochum_1
 
 foundSmoochum_5:
-# 218 "data/maps/BabyVillage/scripts.pory"
+# 228 "data/maps/BabyVillage/scripts.pory"
 	msgbox foundPichu_Text_2, MSGBOX_DEFAULT
-# 219 "data/maps/BabyVillage/scripts.pory"
+# 229 "data/maps/BabyVillage/scripts.pory"
 	waitmessage
-# 220 "data/maps/BabyVillage/scripts.pory"
+# 230 "data/maps/BabyVillage/scripts.pory"
 	setvar VAR_UNUSED_0x4103, 2
 	goto foundSmoochum_4
 
 foundSmoochum_6:
-# 217 "data/maps/BabyVillage/scripts.pory"
+# 227 "data/maps/BabyVillage/scripts.pory"
 	goto_if_set FLAG_UNUSED_0x49A, foundSmoochum_11
 	goto foundSmoochum_4
 
 foundSmoochum_7:
-# 217 "data/maps/BabyVillage/scripts.pory"
+# 227 "data/maps/BabyVillage/scripts.pory"
 	goto_if_set FLAG_UNUSED_0x499, foundSmoochum_6
 	goto foundSmoochum_4
 
 foundSmoochum_10:
-# 217 "data/maps/BabyVillage/scripts.pory"
+# 227 "data/maps/BabyVillage/scripts.pory"
 	goto_if_set FLAG_UNUSED_0x49C, foundSmoochum_5
 	goto foundSmoochum_4
 
 foundSmoochum_11:
-# 217 "data/maps/BabyVillage/scripts.pory"
+# 227 "data/maps/BabyVillage/scripts.pory"
 	goto_if_set FLAG_UNUSED_0x49B, foundSmoochum_10
 	goto foundSmoochum_4
 
 
 foundMimeJr::
-# 225 "data/maps/BabyVillage/scripts.pory"
+# 235 "data/maps/BabyVillage/scripts.pory"
 	lock
-# 226 "data/maps/BabyVillage/scripts.pory"
+# 236 "data/maps/BabyVillage/scripts.pory"
 	faceplayer
-# 227 "data/maps/BabyVillage/scripts.pory"
+# 237 "data/maps/BabyVillage/scripts.pory"
 	msgbox foundMimeJr_Text_0, MSGBOX_DEFAULT
-# 228 "data/maps/BabyVillage/scripts.pory"
+# 238 "data/maps/BabyVillage/scripts.pory"
 	waitmessage
-# 229 "data/maps/BabyVillage/scripts.pory"
-	goto_if_unset FLAG_UNUSED_0x49A, foundMimeJr_2
+# 239 "data/maps/BabyVillage/scripts.pory"
+	goto_if_unset FLAG_UNUSED_0x49B, foundMimeJr_2
 foundMimeJr_1:
-# 240 "data/maps/BabyVillage/scripts.pory"
+# 252 "data/maps/BabyVillage/scripts.pory"
 	goto_if_set FLAG_UNUSED_0x498, foundMimeJr_7
 foundMimeJr_4:
-# 245 "data/maps/BabyVillage/scripts.pory"
+# 257 "data/maps/BabyVillage/scripts.pory"
 	release
 	return
 
 foundMimeJr_2:
-# 231 "data/maps/BabyVillage/scripts.pory"
-	setflag FLAG_UNUSED_0x49A
-# 232 "data/maps/BabyVillage/scripts.pory"
+# 241 "data/maps/BabyVillage/scripts.pory"
+	setflag FLAG_UNUSED_0x49B
+# 242 "data/maps/BabyVillage/scripts.pory"
 	fadescreen FADE_TO_BLACK
-# 233 "data/maps/BabyVillage/scripts.pory"
+# 243 "data/maps/BabyVillage/scripts.pory"
 	setobjectxyperm LOCALID_Mime_jr, 16, 15
-# 234 "data/maps/BabyVillage/scripts.pory"
+# 244 "data/maps/BabyVillage/scripts.pory"
 	removeobject LOCALID_Mime_jr
-# 235 "data/maps/BabyVillage/scripts.pory"
+# 245 "data/maps/BabyVillage/scripts.pory"
 	addobject LOCALID_Mime_jr
-# 236 "data/maps/BabyVillage/scripts.pory"
+# 246 "data/maps/BabyVillage/scripts.pory"
+	applymovement LOCALID_Mime_jr, PinsirDown
+# 247 "data/maps/BabyVillage/scripts.pory"
+	waitmovement 0
+# 248 "data/maps/BabyVillage/scripts.pory"
 	fadescreen FADE_FROM_BLACK
-# 237 "data/maps/BabyVillage/scripts.pory"
+# 249 "data/maps/BabyVillage/scripts.pory"
 	msgbox foundMimeJr_Text_1, MSGBOX_DEFAULT
-# 238 "data/maps/BabyVillage/scripts.pory"
+# 250 "data/maps/BabyVillage/scripts.pory"
 	waitmessage
 	goto foundMimeJr_1
 
 foundMimeJr_5:
-# 241 "data/maps/BabyVillage/scripts.pory"
+# 253 "data/maps/BabyVillage/scripts.pory"
 	msgbox foundPichu_Text_2, MSGBOX_DEFAULT
-# 242 "data/maps/BabyVillage/scripts.pory"
+# 254 "data/maps/BabyVillage/scripts.pory"
 	waitmessage
-# 243 "data/maps/BabyVillage/scripts.pory"
+# 255 "data/maps/BabyVillage/scripts.pory"
 	setvar VAR_UNUSED_0x4103, 2
 	goto foundMimeJr_4
 
 foundMimeJr_6:
-# 240 "data/maps/BabyVillage/scripts.pory"
+# 252 "data/maps/BabyVillage/scripts.pory"
 	goto_if_set FLAG_UNUSED_0x49A, foundMimeJr_11
 	goto foundMimeJr_4
 
 foundMimeJr_7:
-# 240 "data/maps/BabyVillage/scripts.pory"
+# 252 "data/maps/BabyVillage/scripts.pory"
 	goto_if_set FLAG_UNUSED_0x499, foundMimeJr_6
 	goto foundMimeJr_4
 
 foundMimeJr_10:
-# 240 "data/maps/BabyVillage/scripts.pory"
+# 252 "data/maps/BabyVillage/scripts.pory"
 	goto_if_set FLAG_UNUSED_0x49C, foundMimeJr_5
 	goto foundMimeJr_4
 
 foundMimeJr_11:
-# 240 "data/maps/BabyVillage/scripts.pory"
+# 252 "data/maps/BabyVillage/scripts.pory"
 	goto_if_set FLAG_UNUSED_0x49B, foundMimeJr_10
 	goto foundMimeJr_4
 
 
 Won::
-# 248 "data/maps/BabyVillage/scripts.pory"
+# 260 "data/maps/BabyVillage/scripts.pory"
 	applymovement LOCALID_Celebi, SerebihelpD
-# 249 "data/maps/BabyVillage/scripts.pory"
+# 261 "data/maps/BabyVillage/scripts.pory"
 	msgbox Won_Text_0, MSGBOX_DEFAULT
-# 250 "data/maps/BabyVillage/scripts.pory"
+# 262 "data/maps/BabyVillage/scripts.pory"
 	waitmessage
-# 251 "data/maps/BabyVillage/scripts.pory"
+# 263 "data/maps/BabyVillage/scripts.pory"
 	msgbox Won_Text_1, MSGBOX_DEFAULT
-# 252 "data/maps/BabyVillage/scripts.pory"
+# 264 "data/maps/BabyVillage/scripts.pory"
 	waitmessage
-# 253 "data/maps/BabyVillage/scripts.pory"
+# 265 "data/maps/BabyVillage/scripts.pory"
 	msgbox Won_Text_2, MSGBOX_DEFAULT
-# 254 "data/maps/BabyVillage/scripts.pory"
+# 266 "data/maps/BabyVillage/scripts.pory"
 	waitmessage
-# 255 "data/maps/BabyVillage/scripts.pory"
+# 267 "data/maps/BabyVillage/scripts.pory"
 	setvar VAR_UNUSED_0x40F7, 1
 	return
 
 
-# 257 "data/maps/BabyVillage/scripts.pory"
+# 269 "data/maps/BabyVillage/scripts.pory"
 SerebihelpL:
-# 258 "data/maps/BabyVillage/scripts.pory"
+# 270 "data/maps/BabyVillage/scripts.pory"
 	walk_fast_left
 	step_end
 
-# 260 "data/maps/BabyVillage/scripts.pory"
+# 272 "data/maps/BabyVillage/scripts.pory"
 SerebihelpR:
-# 261 "data/maps/BabyVillage/scripts.pory"
+# 273 "data/maps/BabyVillage/scripts.pory"
 	walk_fast_right
 	step_end
 
-# 263 "data/maps/BabyVillage/scripts.pory"
+# 275 "data/maps/BabyVillage/scripts.pory"
 PinsirDown:
-# 264 "data/maps/BabyVillage/scripts.pory"
+# 276 "data/maps/BabyVillage/scripts.pory"
 	face_down
 	step_end
 
-# 266 "data/maps/BabyVillage/scripts.pory"
+# 278 "data/maps/BabyVillage/scripts.pory"
 FacePinsir:
-# 267 "data/maps/BabyVillage/scripts.pory"
+# 279 "data/maps/BabyVillage/scripts.pory"
 	walk_up
-# 267 "data/maps/BabyVillage/scripts.pory"
+# 279 "data/maps/BabyVillage/scripts.pory"
 	walk_up
 	step_end
 
-# 269 "data/maps/BabyVillage/scripts.pory"
+# 281 "data/maps/BabyVillage/scripts.pory"
 FacePinsirL:
-# 270 "data/maps/BabyVillage/scripts.pory"
+# 282 "data/maps/BabyVillage/scripts.pory"
 	walk_right
-# 271 "data/maps/BabyVillage/scripts.pory"
+# 283 "data/maps/BabyVillage/scripts.pory"
 	face_up
 	step_end
 
 RanAway::
-# 274 "data/maps/BabyVillage/scripts.pory"
+# 286 "data/maps/BabyVillage/scripts.pory"
 	msgbox RanAway_Text_0
-# 275 "data/maps/BabyVillage/scripts.pory"
+# 287 "data/maps/BabyVillage/scripts.pory"
 	waitmessage
-# 276 "data/maps/BabyVillage/scripts.pory"
+# 288 "data/maps/BabyVillage/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, GoBack
-# 277 "data/maps/BabyVillage/scripts.pory"
+# 289 "data/maps/BabyVillage/scripts.pory"
 	waitmovement 0
 	return
 
 
-# 279 "data/maps/BabyVillage/scripts.pory"
+# 291 "data/maps/BabyVillage/scripts.pory"
 GoBack:
-# 280 "data/maps/BabyVillage/scripts.pory"
+# 292 "data/maps/BabyVillage/scripts.pory"
 	walk_fast_down
-# 280 "data/maps/BabyVillage/scripts.pory"
+# 292 "data/maps/BabyVillage/scripts.pory"
 	walk_fast_down
-# 280 "data/maps/BabyVillage/scripts.pory"
+# 292 "data/maps/BabyVillage/scripts.pory"
 	walk_fast_down
 	step_end
 
-# 282 "data/maps/BabyVillage/scripts.pory"
+# 294 "data/maps/BabyVillage/scripts.pory"
 SerebihelpD:
-# 283 "data/maps/BabyVillage/scripts.pory"
+# 295 "data/maps/BabyVillage/scripts.pory"
 	walk_fast_down
 	step_end
 
@@ -729,67 +753,71 @@ CelebiTalk_Text_1:
 	.string "will be safe now. I'd love to travel with\l"
 	.string "a kind soul like you.$"
 
+CelebiTalk_Text_2:
+# 123 "data/maps/BabyVillage/scripts.pory"
+	.string "CELEBI joined {PLAYER}!$"
+
 BabiesHidding_Text_0:
-# 128 "data/maps/BabyVillage/scripts.pory"
+# 130 "data/maps/BabyVillage/scripts.pory"
 	.string "There are baby Pokemon hidding here.\n"
 	.string "Best to not disturb them.$"
 
 foundPichu_Text_0:
-# 135 "data/maps/BabyVillage/scripts.pory"
+# 137 "data/maps/BabyVillage/scripts.pory"
 	.string "PICHU:Pi-chu-pi.$"
 
 foundPichu_Text_1:
-# 145 "data/maps/BabyVillage/scripts.pory"
+# 149 "data/maps/BabyVillage/scripts.pory"
 	.string "PICHU returned to CELEBI$"
 
 foundPichu_Text_2:
-# 149 "data/maps/BabyVillage/scripts.pory"
+# 153 "data/maps/BabyVillage/scripts.pory"
 	.string "{PLAYER}:That must me all. Time to go\n"
 	.string "back to CELEBI.$"
 
 foundMagby_Text_0:
-# 158 "data/maps/BabyVillage/scripts.pory"
+# 162 "data/maps/BabyVillage/scripts.pory"
 	.string "MAGBY:Mag-mag-by.$"
 
 foundMagby_Text_1:
-# 168 "data/maps/BabyVillage/scripts.pory"
+# 174 "data/maps/BabyVillage/scripts.pory"
 	.string "MAGBY returned to CELEBI$"
 
 foundElekid_Text_0:
-# 181 "data/maps/BabyVillage/scripts.pory"
+# 187 "data/maps/BabyVillage/scripts.pory"
 	.string "ELEKID:E-le-kid.$"
 
 foundElekid_Text_1:
-# 191 "data/maps/BabyVillage/scripts.pory"
+# 199 "data/maps/BabyVillage/scripts.pory"
 	.string "ELEKID returned to CELEBI$"
 
 foundSmoochum_Text_0:
-# 204 "data/maps/BabyVillage/scripts.pory"
+# 212 "data/maps/BabyVillage/scripts.pory"
 	.string "SMOOCHUM:Smoo-chum.$"
 
 foundSmoochum_Text_1:
-# 214 "data/maps/BabyVillage/scripts.pory"
+# 224 "data/maps/BabyVillage/scripts.pory"
 	.string "SMOOCHUM returned to CELEBI$"
 
 foundMimeJr_Text_0:
-# 227 "data/maps/BabyVillage/scripts.pory"
+# 237 "data/maps/BabyVillage/scripts.pory"
 	.string "MIME JR:Mime Mime.$"
 
 foundMimeJr_Text_1:
-# 237 "data/maps/BabyVillage/scripts.pory"
+# 249 "data/maps/BabyVillage/scripts.pory"
 	.string "MIME JR returned to CELEBI$"
 
 Won_Text_0:
-# 249 "data/maps/BabyVillage/scripts.pory"
+# 261 "data/maps/BabyVillage/scripts.pory"
 	.string "The small green Pokemon is using some\n"
 	.string "kind of power!$"
 
 Won_Text_1:
-# 251 "data/maps/BabyVillage/scripts.pory"
+# 263 "data/maps/BabyVillage/scripts.pory"
 	.string "You can hear a voice in your head!$"
 
 Won_Text_2:
-# 253 "data/maps/BabyVillage/scripts.pory"
+# 265 "data/maps/BabyVillage/scripts.pory"
 	.string "CELEBI:Thank you, friend. My name is\n"
 	.string "CELEBI. This is the BABY VILLAGE were\l"
 	.string "baby Pokemon can grow safely.\l"
@@ -800,6 +828,6 @@ Won_Text_2:
 	.string "somewhere.$"
 
 RanAway_Text_0:
-# 274 "data/maps/BabyVillage/scripts.pory"
+# 286 "data/maps/BabyVillage/scripts.pory"
 	.string "You run away. You can fight again when\n"
 	.string "you are ready!$"

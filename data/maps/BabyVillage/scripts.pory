@@ -120,6 +120,8 @@ script CelebiTalk{
         removeobject(LOCALID_Celebi)
         fadescreen(FADE_FROM_BLACK)
         givemon(SPECIES_CELEBI,15)
+        msgbox(format("CELEBI joined {PLAYER}!"),MSGBOX_DEFAULT)
+        waitmessage
     }
     release
 }
