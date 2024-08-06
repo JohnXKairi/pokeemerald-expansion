@@ -98,7 +98,10 @@
     "RainyField",
     "GrassyField2",
     "BurningField2",
-    "RainyField2"
+    "RainyField2",
+    "DewfordDojo",
+    "DewfordPath",
+    "DewfordPath2"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",

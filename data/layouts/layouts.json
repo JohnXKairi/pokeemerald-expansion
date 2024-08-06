@@ -4490,6 +4490,36 @@
       "secondary_tileset": "gTileset_Rustboro",
       "border_filepath": "data/layouts/BabyVillage/border.bin",
       "blockdata_filepath": "data/layouts/BabyVillage/map.bin"
+    },
+    {
+      "id": "LAYOUT_DEWFORD_DOJO",
+      "name": "DewfordDojo_Layout",
+      "width": 30,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_BattleFrontierOutsideEast",
+      "border_filepath": "data/layouts/DewfordDojo/border.bin",
+      "blockdata_filepath": "data/layouts/DewfordDojo/map.bin"
+    },
+    {
+      "id": "LAYOUT_DEWFORD_PATH",
+      "name": "DewfordPath_Layout",
+      "width": 10,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Dewford",
+      "border_filepath": "data/layouts/DewfordPath/border.bin",
+      "blockdata_filepath": "data/layouts/DewfordPath/map.bin"
+    },
+    {
+      "id": "LAYOUT_DEWFORD_PATH2",
+      "name": "DewfordPath2_Layout",
+      "width": 11,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_BattleFrontierOutsideEast",
+      "border_filepath": "data/layouts/DewfordPath2/border.bin",
+      "blockdata_filepath": "data/layouts/DewfordPath2/map.bin"
     }
   ]
 }

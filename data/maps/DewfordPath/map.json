@@ -1,0 +1,39 @@
+{
+  "id": "MAP_DEWFORD_PATH",
+  "name": "DewfordPath",
+  "layout": "LAYOUT_DEWFORD_PATH",
+  "music": "MUS_DUMMY",
+  "region_map_section": "MAPSEC_DEWFORD_TOWN",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_DEWFORD_PATH2",
+      "offset": 0,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_DEWFORD_TOWN",
+      "offset": 0,
+      "direction": "right"
+    }
+  ],
+  "object_events": [
+
+  ],
+  "warp_events": [
+
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
+}

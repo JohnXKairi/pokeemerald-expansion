@@ -1090,3 +1090,9 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/FoggyWoods/scripts.inc"
 
 	.include "data/maps/BabyVillage/scripts.inc"
+
+	.include "data/maps/DewfordDojo/scripts.inc"
+
+	.include "data/maps/DewfordPath/scripts.inc"
+
+	.include "data/maps/DewfordPath2/scripts.inc"

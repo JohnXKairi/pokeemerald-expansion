@@ -69,6 +69,9 @@
 #define MAP_GRASSY_FIELD2       (60 | (0 << 8))
 #define MAP_BURNING_FIELD2      (61 | (0 << 8))
 #define MAP_RAINY_FIELD2        (62 | (0 << 8))
+#define MAP_DEWFORD_DOJO        (63 | (0 << 8))
+#define MAP_DEWFORD_PATH        (64 | (0 << 8))
+#define MAP_DEWFORD_PATH2       (65 | (0 << 8))
 
 // gMapGroup_IndoorLittleroot
 #define MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F    (0 | (1 << 8))
