@@ -283,20 +283,19 @@ RustboroCity_Gym_Text_RoxanneRematchNeedTwoMons:
 	.string "POKéMON.$"
 `
 script preRoxanne{
-    lock
-    trainerbattle_double(TRAINER_ROCKY_PRE_ROXANNE, RockyInt, RockyOut,RockyOutNotEnMon)
-    msgbox(format("ROCKY:You have earned the right to challenge ROXANNE."),MSGBOX_DEFAULT)
+    trainerbattle_double(TRAINER_ROCKY_PRE_ROXANNE,prerox1,prerox2,prerox3)
+    msgbox(format("ROCKY:You have earned the right to challenge ROXANNE."),MSGBOX_AUTOCLOSE)
     waitmessage
-    release
 }
 
-text RockyInt{
-    format("ROCKY:If you wish to face ROXANNE you must prove yourself first.")
+text prerox1{
+	format("ROCKY:Let's see what you've got.")
 }
 
-text RockyOut{
-    format("ROCKY:Well done.")
+text prerox2{
+	format("ROCKY:Well done.")
 }
-text RockyOutNotEnMon{
-    format("ROCKY:Well done. You have earned the right to challenge ROXANNE.")
+
+text prerox3{
+	format("ROCKY:You should catch some more Pokemon.")
 }

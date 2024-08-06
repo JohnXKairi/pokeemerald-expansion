@@ -118,7 +118,7 @@ pinsirR::
 # 54 "data/maps/BabyVillage/scripts.pory"
 	lock
 # 55 "data/maps/BabyVillage/scripts.pory"
-	msgbox pinsirL_Text_0, MSGBOX_YESNO
+	msgbox pinsirR_Text_0, MSGBOX_YESNO
 # 56 "data/maps/BabyVillage/scripts.pory"
 	waitmessage
 # 57 "data/maps/BabyVillage/scripts.pory"
@@ -741,6 +741,14 @@ pinsirL_Text_0:
 	.string "ahead. It's fighting a big scary one.\l"
 	.string "This Pokemon seems stronger, somehow.\l"
 	.string "Do you still want to fight it?$"
+
+pinsirR_Text_0:
+# 55 "data/maps/BabyVillage/scripts.pory"
+	.string "There is a small Pokemon in danger up\n"
+	.string "ahead. It's fighting a big scary one.\l"
+	.string "This Pokemon seems stronger, somehow.\l"
+	.string "Do you still want to fight\l"
+	.string "it?(suggested lv 15)$"
 
 CelebiTalk_Text_0:
 # 112 "data/maps/BabyVillage/scripts.pory"

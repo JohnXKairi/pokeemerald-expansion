@@ -567,33 +567,28 @@ RustboroCity_Gym_Text_RoxanneRematchNeedTwoMons:
 
 preRoxanne::
 # 286 "data/maps/RustboroCity_Gym/scripts.pory"
-	lock
+	trainerbattle_double TRAINER_ROCKY_PRE_ROXANNE, prerox1, prerox2, prerox3
 # 287 "data/maps/RustboroCity_Gym/scripts.pory"
-	trainerbattle_double TRAINER_ROCKY_PRE_ROXANNE, RockyInt, RockyOut, RockyOutNotEnMon
-# 288 "data/maps/RustboroCity_Gym/scripts.pory"
 	msgbox preRoxanne_Text_0, MSGBOX_DEFAULT
-# 289 "data/maps/RustboroCity_Gym/scripts.pory"
+# 288 "data/maps/RustboroCity_Gym/scripts.pory"
 	waitmessage
-# 290 "data/maps/RustboroCity_Gym/scripts.pory"
-	release
 	return
 
 
 preRoxanne_Text_0:
-# 288 "data/maps/RustboroCity_Gym/scripts.pory"
+# 287 "data/maps/RustboroCity_Gym/scripts.pory"
 	.string "ROCKY:You have earned the right to\n"
 	.string "challenge ROXANNE.$"
 
-RockyInt::
-# 293 "data/maps/RustboroCity_Gym/scripts.pory"
-	.string "ROCKY:If you wish to face ROXANNE you\n"
-	.string "must prove yourself first.$"
+prerox1::
+# 291 "data/maps/RustboroCity_Gym/scripts.pory"
+	.string "ROCKY:Let's see what you've got.$"
 
-RockyOut::
-# 297 "data/maps/RustboroCity_Gym/scripts.pory"
+prerox2::
+# 295 "data/maps/RustboroCity_Gym/scripts.pory"
 	.string "ROCKY:Well done.$"
 
-RockyOutNotEnMon::
-# 300 "data/maps/RustboroCity_Gym/scripts.pory"
-	.string "ROCKY:Well done. You have earned the\n"
-	.string "right to challenge ROXANNE.$"
+prerox3::
+# 299 "data/maps/RustboroCity_Gym/scripts.pory"
+	.string "ROCKY:You should catch some more\n"
+	.string "Pokemon.$"
