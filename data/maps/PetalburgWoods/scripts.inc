@@ -318,6 +318,22 @@ PetalburgWoods_EventScript_JamesRematch::
 	msgbox PetalburgWoods_Text_IveBeenTrainingHard, MSGBOX_AUTOCLOSE
 	end
 
+foggyWarning::
+	lock
+	msgbox foggyWarning_Text_0, MSGBOX_DEFAULT
+	waitmessage
+	release
+	return
+
+
+foggyWarning_Text_0:
+	.string "BUG CATCHER:Be careful. There are some\n"
+	.string "strong Pokemon up ahead. A friend of\l"
+	.string "mine saw a lv 15 Pokemon. Make sure you\l"
+	.string "are ready if you go deeper into the\l"
+	.string "forest.$"
+
+
 PetalburgWoods_Text_NotAOneToBeFound:
 	.string "Hmmm…\n"
 	.string "Not a one to be found…$"

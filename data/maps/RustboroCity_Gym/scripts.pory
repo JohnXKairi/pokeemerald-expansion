@@ -288,6 +288,13 @@ script preRoxanne{
     waitmessage
 }
 
+script gymAerodactyl{
+	lock    
+	msgbox(format("AERODACTYL: Daaa-ctyl."),MSGBOX_DEFAULT)
+    waitmessage
+	release
+}
+
 text prerox1{
 	format("ROCKY:Let's see what you've got.")
 }

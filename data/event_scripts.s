@@ -1096,3 +1096,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/DewfordPath/scripts.inc"
 
 	.include "data/maps/DewfordPath2/scripts.inc"
+
+	.include "data/maps/DewfordDojoArena/scripts.inc"

@@ -4520,6 +4520,16 @@
       "secondary_tileset": "gTileset_BattleFrontierOutsideEast",
       "border_filepath": "data/layouts/DewfordPath2/border.bin",
       "blockdata_filepath": "data/layouts/DewfordPath2/map.bin"
+    },
+    {
+      "id": "LAYOUT_DEWFORD_DOJO_ARENA",
+      "name": "DewfordDojoArena_Layout",
+      "width": 26,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_PetalburgGym",
+      "border_filepath": "data/layouts/DewfordDojoArena/border.bin",
+      "blockdata_filepath": "data/layouts/DewfordDojoArena/map.bin"
     }
   ]
 }

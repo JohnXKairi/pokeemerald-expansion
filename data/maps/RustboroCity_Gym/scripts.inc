@@ -569,9 +569,21 @@ preRoxanne::
 # 286 "data/maps/RustboroCity_Gym/scripts.pory"
 	trainerbattle_double TRAINER_ROCKY_PRE_ROXANNE, prerox1, prerox2, prerox3
 # 287 "data/maps/RustboroCity_Gym/scripts.pory"
-	msgbox preRoxanne_Text_0, MSGBOX_DEFAULT
+	msgbox preRoxanne_Text_0, MSGBOX_AUTOCLOSE
 # 288 "data/maps/RustboroCity_Gym/scripts.pory"
 	waitmessage
+	return
+
+
+gymAerodactyl::
+# 292 "data/maps/RustboroCity_Gym/scripts.pory"
+	lock
+# 293 "data/maps/RustboroCity_Gym/scripts.pory"
+	msgbox gymAerodactyl_Text_0, MSGBOX_DEFAULT
+# 294 "data/maps/RustboroCity_Gym/scripts.pory"
+	waitmessage
+# 295 "data/maps/RustboroCity_Gym/scripts.pory"
+	release
 	return
 
 
@@ -580,15 +592,19 @@ preRoxanne_Text_0:
 	.string "ROCKY:You have earned the right to\n"
 	.string "challenge ROXANNE.$"
 
+gymAerodactyl_Text_0:
+# 293 "data/maps/RustboroCity_Gym/scripts.pory"
+	.string "AERODACTYL: Daaa-ctyl.$"
+
 prerox1::
-# 291 "data/maps/RustboroCity_Gym/scripts.pory"
+# 298 "data/maps/RustboroCity_Gym/scripts.pory"
 	.string "ROCKY:Let's see what you've got.$"
 
 prerox2::
-# 295 "data/maps/RustboroCity_Gym/scripts.pory"
+# 302 "data/maps/RustboroCity_Gym/scripts.pory"
 	.string "ROCKY:Well done.$"
 
 prerox3::
-# 299 "data/maps/RustboroCity_Gym/scripts.pory"
+# 306 "data/maps/RustboroCity_Gym/scripts.pory"
 	.string "ROCKY:You should catch some more\n"
 	.string "Pokemon.$"

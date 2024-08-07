@@ -1,1 +1,41 @@
 mapscripts DewfordDojo_MapScripts {}
+
+script OnlyFight{
+    lock
+    if(flag(FLAG_UNUSED_0x4A0 )){
+        applymovement(OBJ_EVENT_ID_PLAYER,dojolook)
+        waitmovement(0)
+        msgbox(format("DOJO GUARDIAN:Welcome to DEWFORD DOJO. You can challenge the dojo masters for a very special prize. However, only fighting type pokemon are allowed inside."))
+        waitmessage
+        specialvar (VAR_RESULT, CheckDojo)
+        if(var(VAR_RESULT)){
+        msgbox(format("DOJO GUARDIAN:You may proceed!"))
+        waitmessage
+        }else{
+        msgbox(format("DOJO GUARDIAN:Only fighting types are allowed in the dojo. Sorry."))
+        waitmessage
+        applymovement(OBJ_EVENT_ID_PLAYER,dojoOut)
+        waitmovement(0)
+    }
+    release
+}
+}
+
+script leftDojo{
+    lock
+    setflag(FLAG_UNUSED_0x4A0 )
+    release
+}
+script enterDojo{
+    lock
+    clearflag(FLAG_UNUSED_0x4A0 )
+    release
+}
+
+movement dojoOut{
+    walk_down
+}
+
+movement dojolook{
+    face_right
+}

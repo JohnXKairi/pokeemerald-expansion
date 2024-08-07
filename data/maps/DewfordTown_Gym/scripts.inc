@@ -228,7 +228,7 @@ DewfordTown_Gym_EventScript_BrendenBrightenRoom::
 	end
 
 DewfordTown_Gym_EventScript_Cristian::
-	trainerbattle_single TRAINER_CRISTIAN, DewfordTown_Gym_Text_CristianIntro, DewfordTown_Gym_Text_CristianDefeat, DewfordTown_Gym_EventScript_CristianBrightenRoom
+	trainerbattle_double TRAINER_CRISTIAN, DewfordTown_Gym_Text_CristianIntro, DewfordTown_Gym_Text_CristianDefeat, DewfordTown_Gym_moreMon, DewfordTown_Gym_EventScript_CristianBrightenRoom
 	msgbox DewfordTown_Gym_Text_CristianPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -282,6 +282,16 @@ DewfordTown_Gym_EventScript_GymStatue::
 	releaseall
 	end
 
+gymLucario::
+	lock    
+	msgbox gymLucarioText, MSGBOX_DEFAULT
+    waitmessage
+	release
+	end
+
+gymLucarioText:
+	.string "LUCARIO:Caaaa-rio!$"
+
 DewfordTown_Gym_Text_GymGuideAdvice:
 	.string "Hey, how's it going, CHAMPION-\n"
 	.string "bound {PLAYER}?\p"
@@ -308,6 +318,9 @@ DewfordTown_Gym_Text_TakaoIntro:
 
 DewfordTown_Gym_Text_TakaoDefeat:
 	.string "Not enough power…$"
+
+DewfordTown_Gym_moreMon:
+	.string "You need to catch more Pokemon…$"
 
 DewfordTown_Gym_Text_TakaoPostBattle:
 	.string "Your skill overcame my strength!\n"
