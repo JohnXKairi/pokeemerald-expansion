@@ -273,7 +273,7 @@ MeetLeaf::
 # 141 "data/maps/Route102/scripts.pory"
 	setvar VAR_UNUSED_0x4100, 1
 # 142 "data/maps/Route102/scripts.pory"
-	msgbox MeetLeaf_Text_0
+	msgbox MeetLeaf_Text_0, MSGBOX_DEFAULT
 # 143 "data/maps/Route102/scripts.pory"
 	waitmessage
 # 144 "data/maps/Route102/scripts.pory"
@@ -285,19 +285,19 @@ MeetLeaf::
 # 147 "data/maps/Route102/scripts.pory"
 	waitbuttonpress
 # 148 "data/maps/Route102/scripts.pory"
-	msgbox MeetLeaf_Text_2
+	msgbox MeetLeaf_Text_2, MSGBOX_DEFAULT
 # 149 "data/maps/Route102/scripts.pory"
 	waitmessage
 # 150 "data/maps/Route102/scripts.pory"
 	waitbuttonpress
 # 151 "data/maps/Route102/scripts.pory"
-	msgbox MeetLeaf_Text_3
+	msgbox MeetLeaf_Text_3, MSGBOX_DEFAULT
 # 152 "data/maps/Route102/scripts.pory"
 	waitmessage
 # 153 "data/maps/Route102/scripts.pory"
 	waitbuttonpress
 # 154 "data/maps/Route102/scripts.pory"
-	msgbox MeetLeaf_Text_4
+	msgbox MeetLeaf_Text_4, MSGBOX_DEFAULT
 # 155 "data/maps/Route102/scripts.pory"
 	waitmessage
 # 156 "data/maps/Route102/scripts.pory"

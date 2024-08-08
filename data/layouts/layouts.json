@@ -4524,7 +4524,7 @@
     {
       "id": "LAYOUT_DEWFORD_DOJO_ARENA",
       "name": "DewfordDojoArena_Layout",
-      "width": 26,
+      "width": 27,
       "height": 20,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_PetalburgGym",

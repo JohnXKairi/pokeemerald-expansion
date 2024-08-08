@@ -139,19 +139,19 @@ script MeetLeaf1{
 
 script MeetLeaf{
     setvar(VAR_UNUSED_0x4100,1)
-    msgbox(format("???:Did you see a man in black run by?"))
+    msgbox(format("???:Did you see a man in black run by?"),MSGBOX_DEFAULT)
     waitmessage
     waitbuttonpress
     msgbox(format("???:Oh!Sorry. My name is Leaf."))
     waitmessage
     waitbuttonpress
-    msgbox(format("LEAF:I was sent here on a mission by PROF OAK. Then I came across this guy dressed in a TEAM ROCKET outfit. They are a bunch of criminals from Kanto."))
+    msgbox(format("LEAF:I was sent here on a mission by PROF OAK. Then I came across this guy dressed in a TEAM ROCKET outfit. They are a bunch of criminals from Kanto."),MSGBOX_DEFAULT)
     waitmessage
     waitbuttonpress
-    msgbox(format("LEAF:They went north? Oh, no! They went to STARTER FIELDS. You are a trainner too, right? Please Help me find them."))
+    msgbox(format("LEAF:They went north? Oh, no! They went to STARTER FIELDS. You are a trainner too, right? Please Help me find them."),MSGBOX_DEFAULT)
     waitmessage
     waitbuttonpress
-    msgbox(format("LEAF:You will!? That's great. Follow me!"))
+    msgbox(format("LEAF:You will!? That's great. Follow me!"),MSGBOX_DEFAULT)
     waitmessage
     waitbuttonpress
     applymovement(OBJ_EVENT_ID_PLAYER, playerMove4)

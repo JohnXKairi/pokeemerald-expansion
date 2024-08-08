@@ -1,1 +1,102 @@
 mapscripts DewfordDojoArena_MapScripts {}
+
+script DojoFin{
+    lock
+    checktrainerflag(TRAINER_DOJO_MASTER) 
+    goto_if_eq(VAR_RESULT, TRUE, DojoEnd)
+    goto_if_eq(VAR_RESULT, FALSE, DojoFinal)
+    release
+}
+
+script DojoFinal{
+    checktrainerflag(TRAINER_DOJO1) 
+    goto_if_eq(VAR_RESULT, TRUE, DojoFinal1)
+    goto_if_eq(VAR_RESULT, FALSE, DojoFinalNo)
+    release
+}
+
+script DojoFinal1{
+    checktrainerflag(TRAINER_DOJO2) 
+    goto_if_eq(VAR_RESULT, TRUE, DojoFinal2)
+    goto_if_eq(VAR_RESULT, FALSE, DojoFinalNo)
+    release
+}
+
+script DojoFinal2{
+    checktrainerflag(TRAINER_DOJO3) 
+    goto_if_eq(VAR_RESULT, TRUE, DojoFinal3)
+     goto_if_eq(VAR_RESULT, FALSE, DojoFinalNo)
+     release
+}
+
+script DojoFinal3{
+    checktrainerflag(TRAINER_DOJO4) 
+    goto_if_eq(VAR_RESULT, TRUE, DojoFinalFight)
+    goto_if_eq(VAR_RESULT, FALSE, DojoFinalNo)
+    release
+}
+
+script DojoFinalNo{
+    msgbox(format("DOJO MASTER:If you wish to challenge me, you must beat all my students first."),MSGBOX_DEFAULT)
+    waitmessage
+    release
+}
+
+script DojoEnd{
+    msgbox(format("DOJO MASTER:There is a fellow sensei just EAST of MAUVILLE CITY. If you beat him he can help you evolve KUBFU."),MSGBOX_DEFAULT)
+    waitmessage
+    release
+}
+
+script DojoFinalFight{
+    msgbox(format("DOJO MASTER:Time for your final test."),MSGBOX_DEFAULT)
+    waitmessage
+    trainerbattle_single(TRAINER_DOJO_MASTER,introDojo,outroDojo)
+    msgbox(format("DOJO MASTER:Impresive!  You are a proper sensei now. You'll need a student."),MSGBOX_DEFAULT)
+    waitmessage
+    givemon(SPECIES_KUBFU,22)
+    msgbox(format("You recieved KUBFU!"),MSGBOX_DEFAULT)
+    waitmessage
+    msgbox(format("DOJO MASTER:There is a fellow sensei just EAST of MAUVILLE CITY. If you beat him he can help you evolve KUBFU."),MSGBOX_DEFAULT)
+    waitmessage
+    release
+}
+
+script dojo1{
+    lock
+    msgbox(format("DOJO FIGHTER:Ready when you are."),MSGBOX_DEFAULT)
+    waitmessage
+    trainerbattle_single(TRAINER_DOJO1,introDojo,outroDojo)
+    release
+}
+
+script dojo2{
+    lock
+    msgbox(format("DOJO FIGHTER:Ready when you are."),MSGBOX_DEFAULT)
+    waitmessage
+    trainerbattle_single(TRAINER_DOJO2,introDojo,outroDojo)
+    release
+}
+
+script dojo3{
+    lock
+    msgbox(format("DOJO FIGHTER:Ready when you are."),MSGBOX_DEFAULT)
+    waitmessage
+    trainerbattle_single(TRAINER_DOJO3,introDojo,outroDojo)
+    release
+}
+
+script dojo4{
+    lock
+    msgbox(format("DOJO FIGHTER:Ready when you are."),MSGBOX_DEFAULT)
+    waitmessage
+    trainerbattle_single(TRAINER_DOJO4,introDojo,outroDojo)
+    release
+}
+
+text introDojo{
+    format("Show me what you got!")
+}
+text outroDojo{
+    format("Well done!")
+}

@@ -859,13 +859,17 @@
 #define TRAINER_BRENDAN_PLACEHOLDER         853
 #define TRAINER_MAY_PLACEHOLDER             854
 #define TRAINER_ROCKY_PRE_ROXANNE           855
-#define TRAINER_ROCKET_START_FIELD            856
-//#define TRAINER_ROCKY_PRE_ROXANNE           856
+#define TRAINER_ROCKET_START_FIELD           856
+#define TRAINER_DOJO1                        857
+#define TRAINER_DOJO2                        858
+#define TRAINER_DOJO3                       859
+#define TRAINER_DOJO4                        860
+#define TRAINER_DOJO_MASTER                 861
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT                      857
+#define TRAINERS_COUNT                      862
 #define MAX_TRAINERS_COUNT                  900
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 
